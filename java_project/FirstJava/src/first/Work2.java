@@ -85,13 +85,14 @@ public class Work2 {
 			
 			int fahrenheit = 100;
 
-			float celcius = (fahrenheit-32)*5f/9f;
-			
-			celcius = (int)(celcius*100)/(100f);
+			float celcius = (fahrenheit-32)*5/9f;
+
+			celcius = (int)(celcius*100+0.5)/(100f);
 
 			System.out.println("Fahrenheit:"+fahrenheit);
 
 			System.out.println("Celcius:"+celcius);
+			
 
 		
 		//[8] 아래 코드의 문제점을 수정해서 실행결과와 같은 결과를 얻도록 하시오.
@@ -129,21 +130,14 @@ public class Work2 {
 			
 		//[9] 다음은 문자형 변수ch가 영문자(대문자 또는 소문자)이거나 숫자일 때만 변수b의 값이true가 되도록 하는 코드이다.(1)에 알맞은 코드를 넣으시오.
 			
-			[연습문제]/ch3/Exercise3_9.java
+			char ch1 = 'z';
+			
+			boolean b1 = true;
 
-			class Exercise3_9 {
-
-			public static void main(String[]args) {
-
-			char ch = 'z';
-
-			boolean b = ( /* (1) */ );
-
-			System.out.println(b);
-
+			if((ch1>='A'&&ch1<='Z')||(ch1>='a'&&ch1<='z')||(ch1>='0'&&ch1<='9')) {
+				System.out.println("result: "+b1);
 			}
 
-			}
 
 			 
 
@@ -154,23 +148,14 @@ public class Work2 {
 			
 		//[10] 다음은 대문자를 소문자로 변경하는 코드인데,문자 ch에 저장된 문자가 대문자인 경우에만 소문자로 변경한다.문자코드는 소문자가 대문자보다32만큼 더 크다.예를들어 'A‘의 코드는65이고 ’a'의 코드는97이다. (1)~(2)에 알맞은 코드를 넣으시오.
 			
-			char ch = 'A';
+			char ch2 = 'A';
 
-			char lowerCase = ( /* (1) */ ) ? ( /* (2) */ ) : ch;
+ 			char lowerCase = (ch2>='A'&&ch<='Z') ? (char)(ch2+32) : ch;
 
-			System.out.println("ch:"+ch);
+ 			System.out.println("ch: " + ch2);
 
-			System.out.println("chto lowerCase:"+lowerCase);
+ 			System.out.println("chto lowerCase:" + lowerCase);
 
-			}
-
-			}
-
-			//[실행결과]
-
-			//ch:A
-
-			//ch to lowerCase:a
 			
 			
 			
