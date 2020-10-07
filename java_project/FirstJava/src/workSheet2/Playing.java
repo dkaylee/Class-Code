@@ -16,22 +16,18 @@ public class Playing {
 	
 	int numOfCrisKid1(int num) {
 		
-		//얻은 구슬의 개수를 구한다.
-		kid1 = kid1+num;
-		
+	//얻은 구슬의 개수를 구한다.
+		kid1 += num;
+		kid2 -= num;
 		return num = numOfCristal;
 		
 	}
 	
 	void numOfCristalKid2(Playing numOfCrisKid1, int num) {
 		
-		kid2 -= num;
-		
-		
+		kid2 += num;
+		kid1 -= num;
 	}
-	
-	
-	
 	
 	//구슬치기를 하는 과정에서 구슬을 잃고 얻는 매서드
 	
@@ -53,6 +49,7 @@ public class Playing {
 		//각각어린이의 구슬보유개수를 설정
 		p.getData(15, 9);
 		
+		//결과 보내기
 		p.showResult1();
 		p.showResult2();
 		
