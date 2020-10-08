@@ -22,6 +22,7 @@ public class Player {
 		numOfMarble -= num;
 	}
 	
+	
 	// 게임의 결과가 성공 -> 구슬의 개수를 증가
 	void win(int num) {
 		numOfMarble += num;
