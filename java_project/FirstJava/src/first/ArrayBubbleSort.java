@@ -20,7 +20,7 @@ public class ArrayBubbleSort {
 			boolean changed = false; // 자리바뀜이 발생 했는지 체크
 			
 			//자리를 바꿈처리
-			for(int j = 0; j < number.length-i; j++) {
+			for(int j = 0; j < number.length-1-i; j++) {
 				
 				//	왼쪽 인덱스의 값과 오른쪽 인덱스의 값을 비교하고,
 				//	왼쪽 밧이 크면 자리 변경
