@@ -23,7 +23,7 @@ public class PhoneBookMain {
 			// 인스턴스 생성
 			PhoneInfor infor = null;
 			
-			//trim() -> "     123        ".trim() - > "12 3" 
+			//trim() -> "     123        " .trim() - > "12 3" 
 			
 			//입력값없이 enter인 경우 공백 문자열을 반환
 			//문자열의 길이가 0이면 
