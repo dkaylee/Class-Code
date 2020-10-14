@@ -112,8 +112,8 @@ public class ArrayTest {
 		
 		
 	}
-	// int 타입의 배열을 받고, 증가시킬 정구밧을 받아서 
-	// 각 배열의 요소에 받은 정수값 만큼 증가시키고 배열을 반하
+	// int 타입의 배열을 받고, 증가시킬 정수값을 받아서
+	// 각 배열의 요소에 받은 정수값 만큼 증가시키고 배열을 반환
 	// 전달 받은 배열을 반환
 	
 	static int[] addAllArray(int[] ar, int addValue) {
@@ -123,7 +123,6 @@ public class ArrayTest {
 		}
 		return ar;
 	}
-	
 	
 	
 	
