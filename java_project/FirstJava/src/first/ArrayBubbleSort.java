@@ -23,7 +23,7 @@ public class ArrayBubbleSort {
 			for(int j = 0; j < number.length-1-i; j++) {
 				
 				//	왼쪽 인덱스의 값과 오른쪽 인덱스의 값을 비교하고,
-				//	왼쪽 밧이 크면 자리 변경
+				//	왼쪽 값이 크면 자리 변경
 				
 				if(number[j] > number[j+1]) {
 					// 왼쪽 값이 크면 자리 변경
