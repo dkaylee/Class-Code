@@ -45,6 +45,27 @@ public class ExamArray3 {
 			{1,2,3},
 			{4,5,6},
 			{7,8,9}};
+		
+		System.out.println("2차원 배열 ====================");
+		for(int i=0; i<arr2.length; i++) {
+			for(int j=0; j<arr2[i].length; j++) {
+				System.out.print(arr2[i][j]+"\t");
+			}
+			System.out.println();
+		}
+		
+		swapArr(arr2);
+		
+		System.out.println("바뀐 배열 ====================");
+		for(int i=0; i<arr2.length; i++) {
+			for(int j=0; j<arr2[i].length; j++) {
+				System.out.print(arr2[i][j]+"\t");
+			}
+			System.out.println();
+		}
+		
+		
+		
 			
 			//int [] temp = arr2[1];
 			//arr2[1] = arr2[0];
@@ -54,9 +75,6 @@ public class ExamArray3 {
 			//arr2[1] = arr2[0];
 			//arr2[2] = arr2[1];
 			//arr2[0] = arr2[2]; 
-	
-			
-		swapArr(arr2);
 			
 	}
 

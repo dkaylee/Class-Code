@@ -8,7 +8,7 @@ public class Audio extends Product{
 
 	@Override
 	public String toString() {
-		return "Audio[price]";
+		return "Audio["+price+"]";
 	}
 	
 	

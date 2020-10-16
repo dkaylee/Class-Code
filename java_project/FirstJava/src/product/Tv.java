@@ -13,7 +13,7 @@ public class Tv extends Product {
 	@Override
 	public String toString() {
 		
-		return "TV[price]";
+		return "TV["+price+"]";
 	}
 	
 	
