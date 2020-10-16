@@ -14,7 +14,7 @@ public class CarMain {
 		
 		car3.showCurrentGauge();
 	}
-	
+}
 	
 	class Car {
 		
@@ -68,4 +68,4 @@ public class CarMain {
 		System.out.println("잔여 가솔린 : " + waterGauge);
 		}
 		}
-}
+

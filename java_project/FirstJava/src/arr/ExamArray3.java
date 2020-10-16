@@ -21,31 +21,42 @@ public class ExamArray3 {
 	 *
 	 */
 	
-	public static void changedArr(int [][] arr2) {
-		for(int i=0; i<arr2.length; i++) {
-			for (int j=0; j< arr2[i].length; j++) {	
-				System.out.print(arr2[i][j]+"\t");
-			}
-			System.out.println();
+	public static void swapArr(int [][] arr2) {
+		
+		//2차원 배열은 1차원 배열들을 요소로 갖는 배열이다.
+		//1차원 배열들의 위치를 변경 ->2차원 배열이 가지는 1차원 배열의 주소값이 변경
+		
+		//주소값의 변경을 위한 임시 배열을 선언, 생성
+		int[] temp = new int[arr2[arr2.length-1].length];// 789를 담기위한 변수
+		
+		temp = arr2[arr2.length-1]; // 2차원 배열의 마지막 요소인 1차원 배열 temp에 저장	
+		
+		for(int i=arr2.length-1; i>0; i--) {
+			arr2[i] = arr2[i-1];
 		}
-	}
+		
+		arr2[0] = temp;
+		}
 
 	public static void main(String[] args) {
 		
 		
-		int[][] arr2 = new int[][] {
+		int[][] arr2 =  {
 			{1,2,3},
 			{4,5,6},
 			{7,8,9}};
 			
-			int [] temp = arr2[1];
-			arr2[1] = arr2[0];
-			arr2[0] = arr2[2];
-			arr2[2] = temp;
+			//int [] temp = arr2[1];
+			//arr2[1] = arr2[0];
+			//arr2[0] = arr2[2];
+			//arr2[2] = temp;
+			
+			//arr2[1] = arr2[0];
+			//arr2[2] = arr2[1];
+			//arr2[0] = arr2[2]; 
 	
 			
-			
-		ExamArray3.changedArr(arr2);
+		swapArr(arr2);
 			
 	}
 

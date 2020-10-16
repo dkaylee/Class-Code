@@ -6,9 +6,9 @@ public class CCC {
 	
 	public static void main(String[] args) {
 		
-		AAA a = new AAA();
+		//AAA a = new AAA();
 		
-		a.num = 10;
+		//a.num = 10;
 	}
 
 }

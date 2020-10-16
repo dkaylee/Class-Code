@@ -16,7 +16,7 @@ public class ExamArray {
 	 */
 	
 
-	
+	// 전달 받은 1차원 배열에서 최소값을 축출해서 반환하는 메서드
 	public static int minValue(int[] arr) {
 		
 		int mini = arr[0];
@@ -29,8 +29,7 @@ public class ExamArray {
 		return mini;
 	}
 	 
-	
-	
+	// 전달 받은 1차원 배열에서 최대값을 축출해서 반환하는 메서드
 	public static int maxValue(int[] arr) {
 		int max = arr[0];
 		for(int i=1; i<arr.length; i++) {
@@ -45,27 +44,26 @@ public class ExamArray {
 	
 	public static void main(String[] arg) {
 		
+		//배열선언
 		int[] arr = new int[10];
 		int num;
+		
 		
 		Scanner sc = new Scanner(System.in);
 		
 		for(int i=0; i<arr.length; i++) {
 		System.out.print("숫자 10개를 입력해주세요");
-			num = sc.nextInt();
-			arr[i] = num;
+			arr[i] = sc.nextInt();
+	
 		}
 		
 		for(int i=0; i<arr.length; i++) {
 		System.out.print(arr[i]+",");
 		}
 		
-		ExamArray ea = new ExamArray();
 		
-		System.out.println("\n최대값 : " + ea.maxValue(arr));
-		System.out.println("최소값 : " + ea.minValue(arr));
-		
-		
+		System.out.println("\n최대값 : " + maxValue(arr));
+		System.out.println("최소값 : " + minValue(arr));
 	}
 	
 	

@@ -15,6 +15,9 @@ public class ExamArray2 {
 	
 	// 크기만 증가시킬 2차원배열 메서드
 	public static void addOneDArr(int[][] arr, int add) {
+		
+		//2차원 배열이 가지는 1차원 배열의 개수 만큼 반복
+		//각각의 1차원 배열을 반복
 		for(int i= 0; i<arr.length; i++) {
 			for (int j=0; j<arr[i].length; j++) {
 				arr[i][j] += add;
@@ -27,18 +30,18 @@ public class ExamArray2 {
 	
 	public static void main(String[] args) {
 		
-		int[][] arr = new int[][] {
+		int[][] arr =  {
 			{1, 3, 5},
 			{7, 9, 11},
 			{13, 15, 17}};
 		
 		// 저장된값
-		ExamArray2.addOneDArr(arr,0);
+		addOneDArr(arr,0);
 
-		System.out.println("=========증가한값===========");
+		System.out.println("=========3씩 증가한값===========");
 		
 		// 3씩 더해서 증가해서 출력한다.
-		ExamArray2.addOneDArr(arr,3);
+		addOneDArr(arr,3);
 
 		
 		
