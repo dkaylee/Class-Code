@@ -2,7 +2,6 @@ package arr;
 
 public class ExamArray3 {
 	
-	
 	/*
 	 * 문제3. 다음의 형태로 표현된 2차원 배열이 존재한다고 가정해 보자.
 	 * 1 2 3
@@ -63,18 +62,6 @@ public class ExamArray3 {
 			}
 			System.out.println();
 		}
-		
-		
-		
-			
-			//int [] temp = arr2[1];
-			//arr2[1] = arr2[0];
-			//arr2[0] = arr2[2];
-			//arr2[2] = temp;
-			
-			//arr2[1] = arr2[0];
-			//arr2[2] = arr2[1];
-			//arr2[0] = arr2[2]; 
 			
 	}
 
