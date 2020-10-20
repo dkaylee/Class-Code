@@ -25,13 +25,16 @@ public class PhoneBookMain {
 			
 			switch(select) {
 			case 1:
-				manager.intsertInfo();
+				manager.insertInfo();
 				break;
 			case 2:
+				manager.searchInfor();
 				break;
 			case 3:
+				manager.deleteInfor();
 				break;
 			case 4:
+				manager.showAllInfor();
 				break;
 			case 5:
 				System.out.println("프로그램을 종료합니다.");
