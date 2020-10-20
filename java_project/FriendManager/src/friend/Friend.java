@@ -1,6 +1,6 @@
 package friend;
 
-public class Friend {
+public abstract class Friend {
 	
 	private String name;		// 친구이름
 	private String phoneNumber;	// 전화번호
