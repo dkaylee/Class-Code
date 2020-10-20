@@ -144,10 +144,9 @@ public class PhoneBookManager {
 				System.out.println("검색결과===========");
 				pBook[index].showInfor();
 			}
+		}
 			
 			
-			
-		
 			// 사용자에게 이름을 입력 받고 이름으로 검색 한 후 정보 삭제
 			public void deleteInfor() {
 
