@@ -1,5 +1,7 @@
 package ver04;
 
+import ver04.Util;
+
 public class PhoneBookManager {
 	
 	// 전화번호 정보를 저장할 배열을 가지고,
@@ -58,7 +60,7 @@ public class PhoneBookManager {
 			System.out.println("이름>> ");
 			String name = Util.sc.nextLine();
 			System.out.println("전화번호>> ");
-			String pNum = Util.sc.nextLine();
+			String phoneNum = Util.sc.nextLine();
 			System.out.println("주소>> ");
 			String addr = Util.sc.nextLine();
 			System.out.println("이메일>> ");
@@ -68,7 +70,7 @@ public class PhoneBookManager {
 		switch(select) {
 		case 1:
 			// 인스턴스 생성 -> 배열에 저장
-			addInfor(new PhoneInfor(name, pNum,addr, email));
+			addInfor(new PhoneInfor(name, phoneNum,addr, email));
 			break;
 		case 2:
 			// 추가 정보 받고 -> 인스턴스 생성 -> 배열에 저장
@@ -78,7 +80,7 @@ public class PhoneBookManager {
 			System.out.println("학년 >> ");
 			int grade = Util.sc.nextInt();
 			
-			addInfor(new UnivPhoeInfor(name, pNum, addr, email, major, grade));
+			addInfor(new UnivPhoeInfor(name, phoneNum, addr, email, major, grade));
 			
 			break;
 		case 3:
@@ -87,7 +89,7 @@ public class PhoneBookManager {
 			System.out.println("회사 이름>> ");
 			String company = Util.sc.nextLine();
 			
-			addInfor(new CompanyPhoneInfor(name, pNum, addr, email, company));
+			addInfor(new CompanyPhoneInfor(name, phoneNum, addr, email, company));
 			
 			break;
 		case 4:
@@ -98,7 +100,7 @@ public class PhoneBookManager {
 			System.out.println("닉네임>> ");
 			String nickName = Util.sc.nextLine();
 			
-			addInfor(new CafePhoneInfor(name, pNum, addr, email, cafeName, nickName));
+			addInfor(new CafePhoneInfor(name, phoneNum, addr, email, cafeName, nickName));
 			
 			break;
 			
@@ -111,7 +113,6 @@ public class PhoneBookManager {
 		
 		//정보 검색
 		//배열의 index 를 찾는 메서드
-	
 		private int searchIndex(String name) {
 			int index = -1; //정보가 없을때
 			for(int i=0; i<cnt; i++) {
