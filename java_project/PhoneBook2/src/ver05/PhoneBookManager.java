@@ -6,7 +6,6 @@ public class PhoneBookManager {
 	
 	// 전화번호 정보를 저장할 배열을 가지고,
 	// 배열을 이용한 정보의 저장, 삭제, 출력을 하는 기능
-	
 	// 배열 선언 : 상속 관계이기 때문에 PhoneInfor 타입으로 선언
 	private PhoneInfor[] pBook;	// 전화번호 정보를 저장할 배열
 	private int cnt;			// 배열에 저장된 요소의 개수, 배열의 index

@@ -2,11 +2,13 @@ package ver05_2;
 
 public abstract class PhoneInfor implements Infor {
 	
+	
 	// 캡슐화 (변수보호)
 	private String name;		// 이름
 	private String phoneNum;	// 전화번호
 	private String addr;		// 주소
 	private String email;		// 이메일
+	
 	
 	//object 클래스의 생성자를 호출
 	public PhoneInfor(String name, String phoneNum, String addr, String email) {
@@ -15,6 +17,7 @@ public abstract class PhoneInfor implements Infor {
 		this.addr =addr;
 		this.email = email;
 	}
+	
 	
 	// getter , setter
 	public String getName() {
@@ -57,7 +60,7 @@ public abstract class PhoneInfor implements Infor {
 			System.out.println("이메일: "+email);
 		}
 
-		public void showBasicInfor() {
+	public void showBasicInfor() {
 			
 		}
 

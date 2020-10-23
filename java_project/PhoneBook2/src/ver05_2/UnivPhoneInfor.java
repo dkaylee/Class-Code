@@ -1,6 +1,6 @@
 package ver05_2;
 
-public class UnivPhoneInfor extends PhoneInfor implements Infor {
+public class UnivPhoneInfor extends PhoneInfor {
 	
 	// 대학 친구
 	private String major;	// 전공
