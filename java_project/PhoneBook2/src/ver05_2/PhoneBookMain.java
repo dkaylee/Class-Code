@@ -1,6 +1,5 @@
 package ver05_2;
 
-import ver05_2.Util;
 
 public class PhoneBookMain {
 
