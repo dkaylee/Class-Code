@@ -159,7 +159,7 @@ public class PhoneBookManager {
 			System.out.println("정보 삭제 완료!");
 		}
 	}
-
+	
 	public void showAllInfor() {
 		if(cnt==0) {
 			System.out.println("입력된 정보가 없습니다.");
@@ -168,7 +168,7 @@ public class PhoneBookManager {
 		
 		System.out.println("-----------전체정보를 출력합니다-----------");
 		for(int i=0; i<cnt; i++) {
-			pBook[i].showInfor();
+			pBook[i].showBasicInfor();
 			System.out.println("-----------------------------------");
 		}
 	}

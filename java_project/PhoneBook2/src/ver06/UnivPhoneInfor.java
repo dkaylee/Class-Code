@@ -1,4 +1,4 @@
-package ver05_2;
+package ver06;
 
 public class UnivPhoneInfor extends PhoneInfor {
 	
@@ -8,7 +8,7 @@ public class UnivPhoneInfor extends PhoneInfor {
 	
 	public UnivPhoneInfor(String name,String phoneNum, String addr,String email, String grade, String major) {
 		
-		super(name, phoneNum, addr,email);
+		super(name, phoneNum, addr, email);
 		this.major = major;
 		this.grade = grade;
 	}
@@ -21,11 +21,11 @@ public class UnivPhoneInfor extends PhoneInfor {
 		this.major = major;
 	}
 
-	public int getGrade() {
+	public String getGrade() {
 		return grade;
 	}
 
-	public void setGrade(int grade) {
+	public void setGrade(String grade) {
 		this.grade = grade;
 	}
 
