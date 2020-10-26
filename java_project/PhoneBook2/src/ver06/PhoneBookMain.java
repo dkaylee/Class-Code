@@ -1,12 +1,12 @@
 package ver06;
 
-import java.util.ArrayList;
+import java.util.InputMismatchException;
 
-public class PhoneBookMain {
+public class PhoneBookMain implements Util {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws BadInputException {
 		
-		PhoneBookManager pBook =  new PhoneBookManager();
+		PhoneBookManager manager = PhoneBookManager.getInstance();
 		
 		while(true) {
 			System.out.println("*********메뉴를 입력해주세요*********");
@@ -18,26 +18,43 @@ public class PhoneBookMain {
 			
 			System.out.println("********************************");
 			
-			int select = Util.sc.nextInt();
+			int select = 0;
+			
+			try {
+			
+			select = SC.nextInt();
 			
 			if(!(select>0 && select<6)) {
-				System.out.println("메뉴의 선택이 옳바르지 않습니다. \n다시 선택해주세요.");
+				//System.out.println("메뉴의 선택이 옳바르지 않습니다. \n다시 선택해주세요.");
+				//Exception e = new Exception("잘못된 메뉴입력입니다.");
+				BadInputException e = new BadInputException(String.valueOf(select));
+				throw e;
+				}
+			} catch (InputMismatchException | BadInputException e) {
+				System.out.println("메뉴입력이 잘못되었습니다.");
+				SC.nextLine();
+				continue;
+			} catch (Exception e1) {
+				System.out.println("메뉴입력이 잘못되었습니다.");
+				SC.nextLine();
 				continue;
 			}
+			
+			
 				switch(select) {
-				case 1:
-					pBook.insertInfor();
+				case Menu.INSERT:
+					manager.insertInfor();
 					break;
-				case 2:
-					pBook.searchInfor();
+				case Menu.SEARCH:
+					manager.searchInfor();
 					break;
-				case 3:
-					pBook.deleteInfor();
+				case Menu.DELETE:
+					manager.deleteInfor();
 					break;
-				case 4:
-					pBook.showAllInfor();
+				case Menu.DISPLAY_ALL:
+					manager.showAllInfor();
 					break;
-				case 5:
+				case Menu.EXIT:
 					System.out.println("프로그램을 종료합니다.");
 					return;
 				}

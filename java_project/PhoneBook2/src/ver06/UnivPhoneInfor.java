@@ -8,7 +8,7 @@ public class UnivPhoneInfor extends PhoneInfor {
 	
 	public UnivPhoneInfor(String name,String phoneNum, String addr,String email, String grade, String major) {
 		
-		super(name, phoneNum, addr, email);
+		super(name, phoneNum, addr,email);
 		this.major = major;
 		this.grade = grade;
 	}

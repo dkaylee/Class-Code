@@ -4,9 +4,9 @@ public class UnivPhoneInfor extends PhoneInfor {
 	
 	// 대학 친구
 	private String major;	// 전공
-	private String grade;		// 학년
+	private int grade;		// 학년
 	
-	public UnivPhoneInfor(String name,String phoneNum, String addr,String email, String grade, String major) {
+	public UnivPhoneInfor(String name,String phoneNum, String addr,String email, int grade, String major) {
 		
 		super(name, phoneNum, addr,email);
 		this.major = major;
