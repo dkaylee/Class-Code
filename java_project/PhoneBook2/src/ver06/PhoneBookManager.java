@@ -172,7 +172,7 @@ public class PhoneBookManager implements Util{
 			System.out.println("찾으시는 이름 "+name+"의 정보가 존재하지 않습니다.");
 			System.out.println("메뉴로 이동합니다.");
 		} else {
-			// 배열의 요소를 왼쪾으로 시프트 
+			// 배열의 요소를 왼쪽으로 시프트 
 //			for(int i=index; i<cnt-1; i++) {
 //				pBook[i]=pBook[i+1];
 //			}

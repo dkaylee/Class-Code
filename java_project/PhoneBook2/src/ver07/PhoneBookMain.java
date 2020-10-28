@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.InputMismatchException;
 
+import ver07.Util;
+
 public class PhoneBookMain implements Util, Menu {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
