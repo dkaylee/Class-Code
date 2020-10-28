@@ -24,7 +24,7 @@ public class threadMain {
 		st3.start();
 		
 		for(int i=0; i<100; i++) {
-			System.out.println("안녕하세요 메인쓰래드 입니다.");
+			System.out.println("안녕하세요 메인 쓰래드 입니다.");
 		}
 		System.out.println("메인 쓰래드가 종료되었습니다.");
 	}

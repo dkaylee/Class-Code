@@ -59,8 +59,9 @@ public abstract class PhoneInfor implements Infor /* , Serializable */ {
 		this.email = email;
 	}
 	
+	
 	// 정보 출력 하위 클래스에서 오버라이딩할 목적
-		public void showInfor() {
+	public void showInfor() {
 			System.out.println("이름: "+name);
 			System.out.println("전화: "+phoneNum);
 			System.out.println("주소: "+addr);
