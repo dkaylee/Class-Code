@@ -39,7 +39,6 @@ public class PhoneBookManager implements Util{
 	// 배열에 전화번호 정보 저장 메서드
 	private void addInfor(PhoneInfor info) {
 		//pBook[cnt++] = info;
-
 		//List에 정보 저장
 		pBook.add(info);
 		}
