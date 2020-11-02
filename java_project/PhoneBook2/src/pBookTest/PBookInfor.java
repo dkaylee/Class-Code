@@ -1,14 +1,19 @@
 package pBookTest;
 
-public class PBookInfor {
-	
-	private String name;
-	private String phoneNum;
-	private String addr;
-	private String email;
+
+public class PBookInfor implements Infor {
 	
 	
-private PBookInfor(String name, String phoneNum, String addr, String email) {
+	// 친구의 이름, 전화번호, 주소, 이메일
+	// 캡슐화 : 정보은닉 ( 변수의 직접 접근을 제한, 변수를 보호)
+	
+	private String name;		// 이름
+	private String phoneNum;	// 전화번호
+	private String addr;		// 주소 
+	private String email;		// 이메일
+	
+	
+	public PBookInfor(String name, String phoneNum, String addr, String email) {
 		
 		this.name = name;
 		this.phoneNum = phoneNum;
@@ -16,7 +21,7 @@ private PBookInfor(String name, String phoneNum, String addr, String email) {
 		this.email = email;
 	}
 
-
+	// getter setter 메서드를 통해 데이터변경가능
 	public String getName() {
 		return name;
 	}
@@ -33,7 +38,7 @@ private PBookInfor(String name, String phoneNum, String addr, String email) {
 
 
 	public void setPhoneNum(String phoneNum) {
-		phoneNum = phoneNum;
+		this.phoneNum = phoneNum;
 	}
 
 
@@ -64,8 +69,7 @@ private PBookInfor(String name, String phoneNum, String addr, String email) {
 		System.out.println("이메일: "+email);
 	}
 	
-	public void allInfor() {
-		
+	public void showBasicInfor() {
 	}
 	
 	
