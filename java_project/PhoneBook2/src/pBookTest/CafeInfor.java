@@ -34,8 +34,11 @@ public class CafeInfor extends PBookInfor{
 		super.showInfor();
 		System.out.println("동호회 이름 : " + cafeName);
 		System.out.println("닉네임 : " + nickName);
-		
-		
+	}
+	
+	@Override
+	public void showBasicInfor() {
+		super.showInfor();
 	}
 
 }

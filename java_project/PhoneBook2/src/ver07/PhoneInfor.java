@@ -68,8 +68,4 @@ public abstract class PhoneInfor implements Infor /* , Serializable */ {
 			System.out.println("이메일: "+email);
 		}
 
-	public void showBasicInfor() {
-			
-		}
-
 }

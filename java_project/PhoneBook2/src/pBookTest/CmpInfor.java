@@ -26,5 +26,9 @@ public class CmpInfor extends PBookInfor {
 		System.out.println("회사 : " + company);
 	}
 	
+	@Override
+	public void showBasicInfor() {
+		super.showInfor();
+	}
 
 }

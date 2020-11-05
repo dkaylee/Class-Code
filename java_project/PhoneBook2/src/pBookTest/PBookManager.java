@@ -18,14 +18,15 @@ public class PBookManager implements Util{
 	// 사용 할 수 인스턴스 생성하기 
 	List<PBookInfor> pBook;
 	
+	// 내부에 인스턴스 생성하기
+	private static PBookManager manager = new PBookManager(100);
+	
 	private PBookManager(int num) {
 		pBook = new ArrayList<PBookInfor>();
 		// 파일에서 인스턴스 로드
 		load();
 	}
-	
-	// 내부에 인스턴스 생성하기
-	private static PBookManager manager = new PBookManager(100);
+
 	
 	// 외부에서 참조 변수 받기
 	public static PBookManager getInstance() {
@@ -47,9 +48,9 @@ public class PBookManager implements Util{
 	
 		while(true) {
 			System.out.println("입력할 정보를 선택해주세요");
-			System.out.println(Menu.UNIV+"대학친구");
-			System.out.println(Menu.COM+"회사동료");
-			System.out.println(Menu.CAFE+"동아리");
+			System.out.println(Menu.UNIV+". 대학친구");
+			System.out.println(Menu.COM+". 회사동료");
+			System.out.println(Menu.CAFE+". 동아리");
 			
 			try {
 			
@@ -198,6 +199,7 @@ public class PBookManager implements Util{
 			System.out.println("저장된 데이터가 없어 저장이 불가능합니다.");
 			return;
 		}
+		
 	
 	// 인스턴스를 저장할 수 있는 인스턴스들을 저장
 	try {
@@ -205,12 +207,13 @@ public class PBookManager implements Util{
 
 	out.writeObject(pBook);
 	out.close();
-	System.out.println("저장완료!phonebook.ser)");	
+	System.out.println("저장완료!(phonebook.ser)");	
 	} catch (IOException e) {
 		System.out.println("저장하는 과정에 오류가 발생했습니다.("+e.getMessage()+") \n다시 시도해주세요");
 	}
 	
 	}
+	
 	
 	// 저장된 파일 데이터를 로드
 	void load() {

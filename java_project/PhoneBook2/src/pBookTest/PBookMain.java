@@ -16,10 +16,9 @@ public class PBookMain implements Util, Menu {
 			System.out.println(Menu.INSERT+". 저장");
 			System.out.println(Menu.SEARCH+". 검색");
 			System.out.println(Menu.DELETE+". 삭제");
-			System.out.println(Menu.DISPLAY_ALL+". 모든정보출력");
 			System.out.println(Menu.SAVE+". 모든정보 file 저장");
+			System.out.println(Menu.DISPLAY_ALL+". 모든정보출력");
 			System.out.println(Menu.EXIT+". EXIT");
-			
 			System.out.println("********************************");
 			
 			int select = 0;
@@ -53,11 +52,11 @@ public class PBookMain implements Util, Menu {
 					case Menu.DELETE:
 						manager.deleteInfor();
 						break;
-					case Menu.DISPLAY_ALL:
-						manager.showAllInfor();
-						break;
 					case Menu.SAVE:
 						manager.save();
+						break;
+					case Menu.DISPLAY_ALL:
+						manager.showAllInfor();
 						break;
 					case Menu.EXIT:
 						System.out.println("프로그램을 종료합니다.");

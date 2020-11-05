@@ -20,15 +20,15 @@ public class PhoneBookManager implements Util{
 	// 사용할 인스턴스 수 하나 클래스 내부에 설정하기
 	List<PhoneInfor> pBook;
 	
+	// 내부에서 인스턴스 생성
+	private static PhoneBookManager manager = new PhoneBookManager(100);
+	
 	// 생성자 : 싱글톤 처리
 	private PhoneBookManager(int num) {
 		pBook = new ArrayList<PhoneInfor>();
 		// 파일에서 인스턴스 로드
 		load();
 	}
-	
-	// 내부에서 인스턴스 생성
-	private static PhoneBookManager manager = new PhoneBookManager(100);
 	
 	
 	// 외부에서 참조변수를 받을 수 있는 메서드

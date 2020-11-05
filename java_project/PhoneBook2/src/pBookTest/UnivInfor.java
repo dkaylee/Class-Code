@@ -1,5 +1,7 @@
 package pBookTest;
 
+import java.io.Serializable;
+
 public class UnivInfor extends PBookInfor {
 	
 	private String major;	// 전공
@@ -32,6 +34,11 @@ public class UnivInfor extends PBookInfor {
 		super.showInfor();
 		System.out.println("전공 : " + major);
 		System.out.println("학년 : " + grade);
+	}
+
+	@Override
+	public void showBasicInfor() {
+		super.showInfor();
 	}
 	
 }
