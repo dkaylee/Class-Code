@@ -227,7 +227,7 @@ order by deptno
 select job, 
     count(*) || '명' as "직원수",
     to_char(sum(sal)*1100,'L999,999,999') as "급여의 합",
-    to_char(avg(sal)*1100,'L999,9999,999') as"급여 평균",
+    to_char(avg(sal)*1100,'L999,999,999') as"급여 평균",
     to_char(max(sal)*1100,'L999,999,999') as"최대급여",
     to_char(min(sal)*1100,'L999,999,999') as"최소급여"
 from emp
@@ -436,8 +436,8 @@ select deptno,
         30, 'CHICAGO',
         40, 'BOSTON'
     ) AS LOC,
-COUNT(*) as "사원수", 
-round(avg(sal||)) as "평균급여"
+COUNT(*) || '명' as "사원수", 
+to_char(avg(sal)*1100,'L999,999,999') as "평균 급여"
 from emp
 group by deptno
 order by deptno
@@ -453,18 +453,27 @@ from dept;
 -- 31. 업무를 표시한 다음 해당 업무에 대해 부서 번호별 급여 및 부서 10, 20, 30의 급여 총액을 각각 출력하시오.
 -- 별칭은 각 job, dno, 부서 10, 부서 20, 부서 30, 총액으로 지정하시오.
 
-select deptno,
-    COUNT(*) as "사원수", 
-    sum(sal) as "평균급여",
-    decode(deptno,
-        10, 'ACCOUNTING', 
-        20, 'RESEARCH',
-        30, 'SALES',
-        40, 'OPERATION'
-    ) AS DNAME
-from emp
-group by deptno
-order by deptno
-;
+select job ,deptno as "DNO",
+    decode( deptno,
+    10, sum(sal)
+    ) as "부서10",
+    decode( deptno,
+    20, sum(sal)
+    ) as "부서20",
+    decode( deptno,
+    30, sum(sal)
+    ) as "부서30",
+    sum(sal) as "총액"
+    from emp
+    group by job, deptno
+    order by deptno
+    ;
+
+
+
+
+
+
+
 
 
