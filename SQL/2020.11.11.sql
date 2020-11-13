@@ -279,7 +279,6 @@ select sum(saleprice)
 from orders o
 where EXISTS (select saleprice from customer where address like '%대한민국%' and o.custid=c.custid)
 ;
-
 --32. EQUI 조인을 사용하여 SCOTT 사원의 부서번호와 부서 이름을 출력하시오.
 select ename, emp.deptno, dept.dname
 from emp,dept
@@ -291,19 +290,93 @@ from emp inner join dept
 on emp.deptno=dept.deptno
 ;
 --36. 조인과 WildCARD를 사용하여 이름에 ‘A’가 포함된 모든 사원의 이름과 부서명을 출력하시오.
-select 
+select ename, emp.deptno
 from emp,dept
-where 
+where emp.deptno = dept.deptno and ename like '%A%'
 ;
 --37. JOIN을 이용하여 NEW YORK에 근무하는 모든 사원의 이름, 업무, 부서번호 및 부서명을 출력하시오.
+select ename, job, dname, deptno
+from emp join dept
+using(deptno)
+where dname = 'NEWYORK'
+;
+
 --38. SELF JOIN을 사용하여 사원의 이름 및 사원번호, 관리자 이름을 출력하시오.
+select e.ename, e.mgr, m.ename
+from emp e, emp m
+where  e.mgr = m.empno
+;
 --39. OUTER JOIN, SELF JOIN을 사용하여 관리자가 없는 사원을 포함하여 사원번호를 기준으로 내림차순 정렬하여 출력하시오.
+select e.empno, e.ename, e.mgr, m.ename as "관리자"
+from emp e, emp m
+where  e.mgr = m.empno(+)
+order by e.empno desc
+;
+
 --40. SELF JOIN을 사용하여 지정한 사원의 이름, 부서번호, 지정한 사원과 동일한 부서에서 근무하는 사원을 출력하시오. ( SCOTT )
+select e.ename, e.deptno, e1.ename
+from emp e, emp e1
+where e.deptno = e1.deptno and e.ename = 'SCOTT'
+;
 --41. SELF JOIN을 사용하여 WARD 사원보다 늦게 입사한 사원의 이름과 입사일을 출력하시오.
+select e.ename, e.hiredate, e1.ename as "늦게입사한이름", e1.hiredate as "입사한 일"
+from emp e, emp e1
+where e.hiredate < e1.hiredate and e.ename='WARD'
+order by e1.hiredate asc
+;
 -- 42. SELF JOIN 을 사용하여 관리자보다 먼저 입사한 모든 사원의 이름 및 입사일을 관리자의 이름 및 입사일과 함께 출력하시오.
+select e.ename, e.hiredate, e1.ename, e1.hiredate 
+from emp e, emp e1
+where e.hiredate < e1.hiredate and e.mgr = e1.empno
+;
 
+------------------------------------------------------------------------------------------------------
+select *
+from emp;
 
+-- 43. 사원 번호가 7788인 사원과 담당 업무가 같은 사원을 표시(사원 이름과 담당업무)하시오.
+select ename, job from emp
+where job =(select job from emp where empno = 7788)
+;
 
+-- 44. 사원번호가 7499인 사원보다 급여가 많은 사원을 표시하시오. 사원이름과 감당 업무
+select ename, job from emp
+where sal > (select sal from emp where empno = 7499)
+;
 
+-- 45. 최소급여를 받는 사원의 이름, 담당업무 및 급여를 표시하시오. (그룹함수 사용)
+select ename, job, sal from emp 
+where sal=(select min(sal) from emp)
+;
+
+-- 46. 평균급여가 가장 적은 직급의 직급 이름과 직급의 평균을 구하시오.
+select job, avg(sal) 
+from emp
+where sal < (select avg(sal) from emp)
+group by job
+;
+
+-- 47. 각 부서의 최소 급여를 받는 사원의 이름, 급여, 부서번호를 표시하시오.
+select min(avg(sal)) from emp group by job;
+select ename, sal, deptno
+from emp
+group by deptno
+;
+
+-- 48. 담당업무가 ANALYST 인 사원보다 급여가 적으면서 
+-- 업무가 ANALYST가 아닌 사원들을 표시(사원번호, 이름, 담당 업무, 급여)하시오.
+select deptno, ename, job, sal from emp
+where sal < any(select sal from emp where job='ANALYST')
+;
+
+-- 49. 부하직원이 없는 사원의 이름을 표시하시오.
+select * from emp,dept;
+
+-- 50. 부하직원이 있는 사원의 이름을 표시하시오.
+
+-- 51. BLAKE와 동일한 부서에 속한 사원의 이름과 입사일을 표시하는 질의를 작성하시오. 
+--( 단 BLAKE는 제외 )
+select ename, hiredate from emp 
+where deptno = (select deptno from emp where ename ='BLAKE');
 
 
