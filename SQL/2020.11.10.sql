@@ -249,88 +249,116 @@ select*from orders
 order by bookid;
 
 
+--select 추가문제-------------------------------------------------------------------------------------
+
+
 --1 마당서점의고객이요구하는다음질문에대해SQL 문을작성하시오.
 --(1) 도서번호가1인도서의이름
 select bookid, bookname
 from book
 where bookid = 1
 ;
---(2) 가격이20,000원이상인도서의이름
+
+--(2) 가격이20,000원이상인도서의이름 : book
 select bookname, price
 from book
-where price >= 20000
+where price>=20000
 ;
---(3) 박지성의총구매액(박지성의고객번호는1번으로놓고작성)
-select custid, sum(saleprice)
+
+--(3) 박지성의총구매액(박지성의고객번호는1번으로놓고작성) : orders table
+select custid, sum(saleprice) as totalPrice
 from orders
-where custid ='1'
+where custid='1' -- 박지성의 custid
 group by custid
 ;
---(4) 박지성이구매한도서의수(박지성의고객번호는1번으로놓고작성)
-select custid, count(custid) as "구매한 도서의 수"
+
+select sum(saleprice) as totalPrice
 from orders
-where custid ='1'
+where custid=(select custid from customer where name='박지성') -- 박지성의 custid
+;
+
+-- (4) 박지성이구매한도서의수(박지성의고객번호는1번으로놓고작성)
+-- 박지성의 구매 횟수 = 구매한 도서의 수
+select custid, count(*) as "구매한 도서의 수"
+from orders
+where custid=1
 group by custid
 ;
 
 --2 마당서점의운영자와경영자가요구하는다음질문에대해SQL 문을작성하시오.
---(1) 마당서점도서의총개수
-select count(bookid) as "총 도서 수"
+--(1) 마당서점도서의총개수 : book table의 총 row의 개수
+select count(*) as "총 도서 수"
 from book
 ;
---(2) 마당서점에도서를출고하는출판사의총개수
+
+--(2) 마당서점에 도서를 출고하는 출판사의 총 개수 : book
 select count(distinct publisher) as "총 출판사 수" 
 from book
 ;
+
 --(3) 모든고객의이름, 주소
 select name, address
 from customer
 ;
---(4) 2014년7월4일~7월7일사이에주문받은도서의주문번호
+
+--(4) 2014년7월4일~7월7일사이에주문받은도서의주문번호 : orders
 select orderid, orderdate
 from orders
 where orderdate >= '14/07/04' and orderdate <= '14/07/07' 
 ;
+
 --(5) 2014년7월4일~7월7일사이에주문받은도서를제외한도서의주문번호
 select orderid, orderdate
 from orders
-where not orderdate >= '14/07/04' and orderdate <= '14/07/07' 
+where orderdate not between '14/07/04' and '14/07/07' 
 ;
+
 --(6) 성이‘김’씨인고객의이름과주소
-select *
+select name, address
 from customer
 where name like '김%'
 ;
---(7) 성이‘김’씨이고이름이‘아’로끝나는고객의이름과주소
-select *
-from customer
-where name like '%김_아%'
-;
 
+--(7) 성이‘김’씨이고이름이‘아’로끝나는고객의이름과주소
+select name, address
+from customer
+where name like '김%아'
+;
 
 select*
 from emp;
 
+--단일행 함수, 집합함수--------------------------------------------------------
+
 -- 16. SUBSTR 함수를 사용하여 사원들의 입사한 년도와 입사한 달만 출력하시오.
+-- substr(문자열 원본, 시작 인덱스, 개수)
+-- '81/02/21' -> '81/02' -> 1,5
+select substr('String',1,2)
+from dual;
+
 select ename, substr(hiredate,1,5)
 from emp
 ;
 
 -- 17. SUBSTR 함수를 사용하여 4월에 입사한 사원을 출력하시오.
---select ename, hiredate
---from emp
---where substr(hiredate,1,5) = '4'
---;
+select ename, hiredate, substr(hiredate, 4,2)
+from emp
+where substr(hiredate, 4,2)='04'
+;
 
 -- 18. MOD 함수를 사용하여 사원번호가 짝수인 사람만 출력하시오.
+-- select mode(10,2)
+-- from dual;
 select ename , empno
     from emp
-where mod(empno,2) = 0
+where mod(empno,2)=0
 ;
 
 -- 19. 입사일을 년도는 2자리(YY), 월은 숫자(MM)로 표시하고 요일은 약어 (DY)로 지정하여 출력하시오.
+-- to_char(날짜,'YY MM DY')
 select to_char(hiredate,'YY/MM/DY') as 입사일
 from emp
+--where to_char(hiredate,'YY')='04'
 ;
 
 -- 20. 올해 몇 칠이 지났는지 출력하시오. 현재날짜에서 올해 1월 1일을 뺀 결과를 출력하고
@@ -339,30 +367,37 @@ select trunc(sysdate - to_date('20-01-01','YY-MM-DD'))
 from dual
 ;
 
+-- select sysdate, to_date('20-01-01', 'YY-MM-DD'), round(sysdate-to_date('20-01-01','YY-MM-DD'),0)
+-- from dual;
+
 -- 21. 사원들의 상관 사번을 출력하되 상관이 없는 사원에 대해서는 NULL 값 대신 0으로 출력하시오.
-select nvl(mgr,0)
-from emp;
+-- nvl(컬럼, 치환값)
+select ename, nvl(mgr,0)
+from emp
+;
 
 -- 22. DECODE 함수로 직급에 따라 급여를 인상하도록 하시오.
 --직급이 ‘ANALIST”인 사원은 200, ‘SALESMAN’인 사원은 180,
 --‘MANAGER’인 사원은 150, ‘CLERK”인 사원은 100을 인상하시오.​
-select ename, sal,
+select ename, sal, job,
     decode(job,
     'ANALIST',sal+200,
     'SALESMAN',sal+180,
     'MANAGER',sal+150,
-    'CLERK', sal+100) AS upsal
+    'CLERK', sal+100,
+    'PRESIDENT',sal) AS upsal
     from emp
     order by sal;
     
 
 -- 23. 모든 사원의 급여 최고액, 최저액, 총액 및 평균 급여를 출력하시오.
 -- 평균에 대해서는 정수로 반올림하시오.
+
 select 
     max(sal)as"최고액",
     min(sal)as"최저액",
     sum(sal)as"총액",
-    round(avg(sal))as"평균"
+    round(avg(sal),0)as"평균"
     from emp
     ;
 
@@ -385,10 +420,14 @@ select job, count(job) as "담당자 수"
 
 
 -- 26. 관리자 수를 출력하시오.
-select mgr,count(mgr)
+--select mgr,count(mgr)
+--from emp
+--where mgr!=0
+--group by mgr
+--;
+
+select count(distinct mgr)
 from emp
-where mgr!=0
-group by mgr
 ;
 
 
@@ -402,13 +441,24 @@ select
 
 
 -- 28. 직급별 사원의 최저 급여를 출력하시오.
--- 관리자를 알 수 없는 사원과 최저 급여가 2000 미만인 그룹은 제외시키고
+-- 관리자를 알 수 없는 사원과 - 기본 행 where 에서 제외하는 처리
+-- 최저 급여가 2000 미만인 그룹은 제외시키고 - having에서 조건
 -- 결과를 급여에 대한 내림차순으로 정렬하여 출력하시오.
+
 select job,
 min(sal)as"최저액"
 from emp
-where not sal < 2000
+where not sal < 2000 and mgr is not null
+group by job 
+order by min(sal) desc
+;
+
+select job, min(sal)
+from emp
+where mgr is not null
 group by job
+having min(sal)>=2000
+order by min(sal) desc
 ;
 
 -- 29. 각 부서에 대해 부서번호, 사원 수, 부서 내의 모든 사원의 평균 급여를 출력하시오.
@@ -421,8 +471,14 @@ group by deptno
 order by deptno
 ;
 
--- 30. 각 부서에 대해 부서번호 이름, 지역 명, 사원 수, 부서내의 모든 사원의 평균 급여를 출력하시오.
--- 평균 급여는 정수로 반올림 하시오. DECODE 사용.​
+select deptno, count(*), round(avg(sal),2)
+from emp
+group by deptno
+;
+
+-- 30. 각 부서에 대해 
+-- 부서번호 이름, 지역 명, 사원 수, 부서내의 모든 사원의 평균 급여를 출력하시오.
+-- 평균 급여는 정수로 반올림 하시오. DECODE 사용. 부서명, 지역명 ​
 select deptno,
     decode(deptno,
         10, 'ACCOUNTING', 
@@ -436,21 +492,20 @@ select deptno,
         30, 'CHICAGO',
         40, 'BOSTON'
     ) AS LOC,
-COUNT(*) || '명' as "사원수", 
-to_char(avg(sal)*1100,'L999,999,999') as "평균 급여"
-from emp
-group by deptno
-order by deptno
-;
+    COUNT(*) || '명' as "사원수", 
+    to_char(avg(sal)*1100,'L999,999,999') as "평균 급여"
+    from emp
+    group by deptno
+    order by deptno
+    ;
 
-select *
-from dept;
 -- 10	ACCOUNTING	NEW YORK
 -- 20	RESEARCH	DALLAS
 -- 30	SALES	CHICAGO
 -- 40	OPERATIONS	BOSTON
 
--- 31. 업무를 표시한 다음 해당 업무에 대해 부서 번호별 급여 및 부서 10, 20, 30의 급여 총액을 각각 출력하시오.
+-- 31. 업무를 표시한 다음 해당 업무에 대해 부서 번호별 group by job, deptno
+-- 급여 및 부서 10, 20, 30의 급여 총액을 각각 출력하시오.
 -- 별칭은 각 job, dno, 부서 10, 부서 20, 부서 30, 총액으로 지정하시오.
 
 select job ,deptno as "DNO",
@@ -466,11 +521,18 @@ select job ,deptno as "DNO",
     sum(sal) as "총액"
     from emp
     group by job, deptno
-    order by deptno
+    order by deptno, job
     ;
 
-
-
+select job, deptno,
+    decode(deptno, 10, sum(sal)) as "부서 10",
+    decode(deptno, 20, sum(sal)) as "부서 20",
+    decode(deptno, 30, sum(sal)) as "부서 30",
+    sum(sal) as "총액"
+from emp
+group by job, deptno
+order by deptno, job
+;
 
 
 
