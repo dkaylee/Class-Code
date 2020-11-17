@@ -38,9 +38,9 @@ INCREMENT BY 1
 INSERT INTO PHONEINFO_BASIC 
 VALUES (1, 'SCOTT', '010-0000-0000', 'SCOTT@GMAIL.COM', '서울', SYSDATE);
 -- INSERT (SEQ)
-INSERT INTO PHONEINFO_BASIC (IDX, fr_name, fr_phonenumber)
+INSERT INTO PHONEINFO_BASIC
 VALUES (SEQ_PIBASIC_IDX.nextval, 'SCOTT', '010-0000-0000', 'SCOTT@GMAIL.COM', '서울', SYSDATE);
-
+-- 기본정보
 INSERT INTO PHONEINFO_BASIC (IDX, fr_name, fr_phonenumber)
 VALUES (SEQ_PIBASIC_IDX.nextval, 'KING', '010-0000-0000');
 
@@ -50,15 +50,16 @@ DELETE FROM phoneinfo_basic;
 -- 데이터 업데이트 : UPDATE
 UPDATE phoneinfo_basic
 SET FR_EMAIL='KING@NAVER.COM', FR_ADDRESS='부산'
-WHERE IDX=5
+WHERE IDX=22
 ;
 
 -- C(CREATE), R(READ), U(UPDATE), D(DELETE)
 -- INSERT, SELECT, UPDATE, DELETE
 
 -- PhoneInfo_univ
-
+DROP TABLE PHONEINFO_BASIC;
 DROP TABLE PHONEINFO_UNIV;
+DROP TABLE PHONEINFO_COM;
 
 create table PHONEINFO_UNIV (
     idx number(6),
@@ -91,7 +92,7 @@ where pb.idx=pu.fr_ref
 -- update : phoneinfo_univ  where idx=3;
 update phoneinfo_univ
 set fr_u_major='체육', fr_u_year =4
-where idx=1;
+where idx=3;
 
 
 -- delete : idx = 10 행을 삭제
@@ -105,6 +106,8 @@ CREATE table phoneinfo_com (
     fr_c_company varchar2(20) default 'N',
     fr_ref number(6) not null constraint pi_com_ref_FK REFERENCES phoneinfo_basic (idx)
 );
+
+desc phoneinfo_com;
 
 -- 회사 친구 정보 입력
 INSERT INTO PHONEINFO_BASIC (IDX, fr_name, fr_phonenumber)
@@ -128,9 +131,31 @@ where idx=1;
 
 
 -- delete
--- 자식 테이블의 행부터 작제하고 부모 테이블 삭제해야 지워짐
+-- 자식 테이블의 행부터 삭제하고 부모 테이블 삭제해야 지워짐
 delete from phoneinfo_com where fr_ref=6;
 delete from phoneinfo_basic where idx=6;
+
+
+
+select *
+from phoneinfo_basic pb, phoneinfo_univ pu, phoneinfo_com pc
+where pb.idx=pu.fr_ref(+) and pb.idx=pc.fr_ref(+)
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
