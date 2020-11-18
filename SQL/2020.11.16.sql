@@ -143,6 +143,7 @@ where pb.idx=pu.fr_ref(+) and pb.idx=pc.fr_ref(+)
 ;
 
 
+drop sequence seq_dept_deptno;
 
 
 
@@ -153,12 +154,10 @@ where pb.idx=pu.fr_ref(+) and pb.idx=pc.fr_ref(+)
 
 
 
+SELECT * from emp;
 
 
-
-
-
-
+SELECT * from dept;
 
 
 
