@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- html5 문서임을 정의-->
+
+<html lang="ko">
+<!-- html 문서의 시작 작성하는 언어 정의-->
+
+<head>
+    <!-- html 문서의 정보를 정의 -->
+    <title>First HTML5</title> <!-- 웹 문서의 제목 -->
+    <meta charset="utf-8"> <!-- 문서의 속성 -->
+    <style>
+        
+        h1 {
+            background-color: skyblue;
+            color: antiquewhite;
+        }
+        h2 {
+            background-color: lightpink;
+            color: antiquewhite;
+        }
+        div {
+            background-color: blanchedalmond;
+        }
+        p{
+            background-color: antiquewhite;
+        }
+        span {
+            background-color: coral;
+        }
+        
+        
+    </style> <!-- 웹 문서의 요소들의 스타일 정의 -->
+    <script>
+        //alert('안녕하세요');
+    </script>
+    <!--자바스크립트 정의-->
+</head>
+
+<body>
+    
+    
+    <h3 id="top">INDEX</h3>
+    <ul>
+            <li> <a href="https://www.naver.com">Naver</a></li>
+            <li> <a href="http://192.168.0.24/">link</a></li>
+            <li> <a href="#tag-1">Heading Tag</a></li>
+            <li> <a href="#tag-2">p tag</a></li>
+            <li> <a href="#tag-3">br tag</a></li>
+            <li> <a href="#tag-5">table tag</a></li>
+            <li> <a href="#tag-6">image tag</a></li>
+    </ul>
+   
+    <hr>
+    
+    <h1> 공간 분할 tag </h1>
+    
+    <!--Block-->
+    <div>DIV DIV DIV DIV</div>
+    <!--Inline-->
+    <span>span span span</span>
+    <span>span span span</span>
+    <div>DIV DIV DIV DIV</div>
+    <span>span span span</span>
+    <span>span span span</span>
+    
+    
+    
+    
+    
+    
+    
+    
+    <hr>
+    
+    <h1 id="tag-6">image tag</h1>
+    
+    <img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">
+    <img src="5.png" width="150">
+    <img src="images/1.png" width="200">
+    <img src="images/2.png" width="200">
+    <img src="test" alt="이미지파일입니다.">
+    
+    
+    <hr>
+    
+    <h1 id="tag-5"> Table tag </h1>
+    <table border="1">
+        <tr>
+            <th>tag</th>
+            <th>설명</th>
+        </tr>
+        
+        <tr>
+            <td>table</td>
+            <td>테이블을 생성해주는 태그</td>
+        </tr>
+        
+        <tr>
+            <td>thead</td>
+            <td>표의 머리</td>
+        </tr>
+        
+        <tr>
+            <td>tbody</td>
+            <td>표의 본문</td>
+        </tr>
+        
+        <tr>
+            <td>tfoot</td>
+            <td>표의 꼬리</td>
+        </tr>
+        
+        <tr>
+            <td>tr</td>
+            <td>테이블의 행을 생성</td>
+        </tr>
+        
+        <tr>
+            <td>td</td>
+            <td>행의 포함되는 열을 생성 표의 제목 요소</td>
+        </tr>
+        
+        <tr>
+            <td>th</td>
+            <td>표의 각 열의 라벨을 표현</td>
+        </tr>
+    
+    </table>
+    
+    
+    
+    <h1> Table tag </h1>
+    
+    <table border="1">
+        <tr>
+            <th colspan="2">지역별 홍차</th>
+            <!--<td></td>-->
+        </tr>
+        
+        <tr>
+            <th rowspan="3"> 중국</th>
+            <td>정산소중</td>
+        </tr>
+
+        <tr>
+            <!--<td></td>-->
+            <td>기문</td>
+        </tr>
+
+        <tr>
+            <!--<td></td>-->
+            <td>운남</td>
+        </tr>
+
+        <tr>
+            <th rowspan="4">인도 및 스리랑카</th>
+            <td>아삼</td>
+        </tr>
+        
+        <tr>
+            <!--<td></td>-->
+            <td>실론</td>
+        </tr>
+
+        <tr>
+            <!--<td></td>-->
+            <td>다즐링</td>
+        </tr>
+        
+        <tr>
+            <!--<td></td>-->
+            <td>닐기리</td>
+        </tr>
+    </table>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     <table border="1">
+        <tr>
+            <td rowspan="2">1,1</td>
+            <td>1,2</td>
+        </tr>
+        <tr>
+            <td>2,1</td>
+           <!-- <td>2,2</td> -->
+        </tr>
+        
+    </table>
+    
+    
+    <table border="1">
+        <tr>
+            <td colspan="2">1,1</td>
+            <!--<td>1,2</td>-->
+        </tr>
+        <tr>
+            <td>2,1</td>
+            <td>2,2</td>
+        </tr>
+        
+    </table>
+    
+    
+    
+    
+    
+    
+    
+    <hr>
+    
+    
+    <h1 id="tag-4">홍차</h3>
+    <hr>
+    
+    
+    
+    
+    <h1>List tag</h1>
+    <!-- 순서 없는 리스트-->
+    <ul>
+        <li>카카오</li>
+        <li>네이버</li>
+        <li>페이스북</li>
+    </ul>
+    
+    
+    <hr>
+    <!--순서 있는 리스트-->
+    <ol>
+        <li>카카오</li>
+        <li>네이버</li>
+        <li>페이스북</li>
+    </ol>
+    
+    
+    
+    <h4>정의</h4>
+    <p>
+    홍차(紅,茶)는 차잎 내부의 성분이 자체에 들어있는 효소에 산화되어[2] 붉은 빛을 띠는 차를 뜻한다. 녹차나 보이차와 같이 효소의 작용을 중지시키는 쇄청(曬靑, 햇볕에 쬐어 말림) 과정을 거치지 않기 때문에 잎 자체의 효소로 산화가 된 것이다.
+    </p>
+    
+    <h4>등급</h4>
+    <p> 
+    동양에서는 우러난 차의 빛깔(붉은색)을 보고 홍차라고 하지만, 서양에서는 찻잎의 색깔(검은색)을 보고 흑차(Black Tea)라고 부른다. 녹차는 동서양 공통으로 綠茶-Green Tea다. 즉, 동양(특히 중국)에서 '흑차'라고 하면 보이차 종류의 후발효차를 지칭하는 명칭이다. 반대로 서양에서 '홍차', 즉 red tea는 허브의 일종인 루이보스를 우려낸 대용차를 말한다.
+    </p>
+    -브로큰 페코
+    <br><br>
+    -브로큰 페코 수숑
+    <br><br>
+    브로큰 오렌지 페코 패닝
+    
+    
+    
+    
+    
+    
+    <hr>
+    <h1 id="tag-2"> 문단 tag </h1>
+    <h2>미국 코로나 일일 확진 20만명 넘어…트럼프는 뭐하나(종합)</h2>
+    <p>
+    (서울=뉴스1) 박혜연 기자 = 미국에서 19일(현지시간) 하루 동안 나온 신종 코로나바이러스 감염증(코로나19) 확진자 수가 20만명을 넘었다고 AFP통신이 보도했다. 역대 최다 기록이다.
+    </p>
+    
+    <p>
+    ◇ 美 코로나 일일 확진 20만명 나와 : 매체는 존스홉킨스대학 통계를 인용, 미 동부시간 오후 8시30분(한국시간 20일 오전 10시30분) 기준 미 전역에서 보고된 코로나19 확진자 수가 전날보다 20만146명 늘었다고 전했다.
+    </p>
+    
+    <p>
+    이날 신규 사망자 수는 2239명으로, 지난 5월 이후 6개월 만에 최다 기록이다.
+    </p>
+    
+    
+    
+    <hr>
+
+    <H1 id="tag-1"> Heading Tag</H1>
+    <hr>
+    <h1>This is heading 1</h1>
+    <h2>This is heading 2</h2>
+    <h3>This is heading 3</h3>
+    <h4>This is heading 4</h4>
+    <h5>This is heading 5</h5>
+    <h5>This is heading 6</h5>
+
+
+    <a href="#top">top</a>
+
+</body>
+
+
+
+
+
+</html>
