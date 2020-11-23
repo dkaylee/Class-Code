@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자</title>
+    <style>
+        
+        /*선택자 {
+            속성 이름 : 속성 값;
+            속성 이름 : 속성 값;
+        }*/
+        
+        /*p{color:black}*/
+        
+        /*전체선택자: 전체 폰트의 컬러값을 지정*/
+        
+        *{
+            color:red;
+        }
+        
+        /*태그 선택자*/
+        
+        
+        h1 {
+            background-color: tan;
+            
+        }
+        
+        p {
+            color:cornflowerblue;
+            background-color: aliceblue;
+        }
+        
+        
+        h1,p,body{
+            margin: 0;
+            padding: 0;
+        }
+        
+        div{
+            height:50px;
+        }
+        
+        form {
+            border:  1px solid black;
+        }
+        
+        ul {
+            border: 
+        }
+        
+        
+        /*아이디 선택자:#아이디*/
+        
+        #header {
+            background-color:mistyrose;
+        }
+        
+        #aside{
+            background-color: rebeccapurple;
+        }
+        
+        #content{
+            background-color: yellow;
+        }
+        
+        /*클래스 선택자 : 요소에 class 속성이 있는 것을 지정하는 선택자*/
+        div.color_white{
+            color: white;
+        }
+        
+        .color_w {
+            color : white;
+        }
+        
+        .font_size_32{
+            font-size: 32px;
+        }
+        
+        .font_weight_bold{
+             font-weight: bold;   
+            }
+        
+        
+        .font_italic{
+            font-style: italic;
+        }
+        
+        
+        /*속성 선택자 : 선택자[속성 이름]*/
+        input[type] {
+            background-color:cadetblue;
+            color:white;
+        }
+        
+        /*속성 선택자 : 선택자[속성 이름=값]*/
+        input[type=button] {
+            background-color:dimgray;
+            padding: 10px;
+            margin: 10px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        /*속성 선택자 : 선택자[속성이름$=값] : */
+        
+        img[src$=png] {
+            border:3px solid red;
+        }
+        img[src$=jpg] {
+            border:3px solid blue;
+        }
+        
+       /* 
+        후손 선택자 : 선택자A 선택자B
+        A 태그 하위의 존재하는 태크를 기준으로 */
+        #header1 h1 {
+            background-color: black;
+            color : aliceblue;
+            font-size: 16px
+        }
+        
+        /*자손 선택자 : 선택자 A > 선택자 B
+        선택자 A로 선택된 태그 바로 아래의 태그들중 선택*/
+        #header1>h1 {
+            
+            border : 5px solid gray;
+            font-style: italic;
+        }
+        
+        
+        /*동위 선택자 : 범위를 한정해서 선택
+        선택자A+선택자B -> A선택의 태그 바로 뒤에 있는 선택자B*/
+        #div1>h1 + h2 {
+            background-color: orchid;
+            color:white;
+        }
+        
+        #div1>h1~h2 {
+            background-color: cadetblue;
+        }
+        
+        
+        
+        /*반응 선택자
+        hover : 마우스 커서가 특정 태그 위로 올라갈 때
+        : active : 마우스 버튼 누르고 있는 상태
+        */
+        
+        h1:hover {
+            background-color:  red;
+            color: aqua;
+            cursor: pointer;
+        }
+        
+        h1: active {
+            background-color: black;
+        }
+        
+        
+        /*상태선택자
+        :checked    -> checkbox, radio
+        :focus      -> input
+        :enabled    -> 사용 가능한 input
+        :disabled   -> 사용 불가한 input
+        */
+        
+        input:enabled {
+            border: 1px solid blue;
+            background-color: aqua;
+        }
+        
+        input:disabled {
+            border: 1px solid red;
+            background-color: darkgray;
+        }
+        
+        input:focus {
+            background-color: yellow;
+        }
+        
+        #msg {
+            padding: 20px;
+            background-color: bisque
+            display: none;
+        }
+        
+        input[type=checkbox] : checked  + #msg {
+            display:block;
+        }
+        
+        #nav, #nav>li{
+            border:0;
+            list-style: none;
+            margin:0;
+            
+        }
+        
+        #nav {
+            margin: 20px 0;
+            overflow: hidden;   
+            /*float:left 속성을 #nav 안으로 한정한다.*/
+        }
+        
+        
+        #nav>li {
+            float: left;
+            padding: 0 10px;
+            
+        }
+        #nav>li:first-child {
+            background-color: aqua;
+            border-radius: 10px  0 0 10px;
+        }
+        #nav>li:last-child {
+            background-color: aqua;
+            border-radius: 0 10px 10px 0;
+        }
+        #nav>li:nth-child(2n) {
+            background-color: antiquewhite;
+        }
+         #nav>li:nth-child(2n+1) {
+            background-color: aquamarine;
+        }
+        
+        
+        
+        /*
+         문자 선택자
+        ::first-letter
+        ::first-line
+        */
+        
+        p::first-letter{
+            font-size:300%
+        }
+        
+        p::first-line {
+            color:blueviolet;
+        }
+        
+        p::selection {
+            background-color:beige;
+        }
+        p::selection{
+            background-color: black;
+            color: aqua;
+        }
+        
+        
+        
+        
+        
+        /*링크 선택자
+        :link
+        :visited*/
+        
+        a:link{
+            color: aqua;
+        }
+        a:visited{
+            color: aqua;
+            text-decoration: none;
+        }
+        a:hover{
+            color:burlywood;
+        }
+        a:link::after{
+            content: '(' attr(href)')';
+        }
+        a:link::befor{
+            content: '(' attr(href)')';
+        }
+
+        
+    </style>
+    
+</head>
+
+<body>
+    
+    
+    <h2>
+        <a href="https://naver.com">네이버</a>
+    </h2>
+    
+    
+    
+    
+    
+     <p>
+    카카오의 ‘인공지능(AI) 챗봇’이 정부의 ‘디지털서비스 전문 계약제도’ 심사위원회를 통과했다. 지난 9월 협업툴 카카오워크를 내놓는 등 자회사 카카오엔터프라이즈를 통해 기업 간 거래(B2B) 사업에 본격적으로 뛰어든 카카오가 공공 정보기술(IT) 인프라 시장에도 진출하는 것이다.
+    </p>
+    
+    
+    
+    
+    
+    <ul id="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        
+    </ul>
+    
+    
+    보이기
+    <input type="checkbox">
+    <div id="msg">
+        체크박스를 체크하시면 DIV 블록이 안보입니다.
+    </div>
+    
+
+    
+    <input> <input disabled>
+    
+     <br>
+     <br>
+    
+    <br>
+    <div id="div1">
+    <h1>This is heading 1</h1>
+    <h2>This is heading 2</h2>
+    <h3>This is heading 3</h3>
+    <h4>This is heading 4</h4>
+    <h5>This is heading 5</h5>
+    <h5>This is heading 6</h5>
+
+    </div>
+    
+    
+    
+   <!-- <div id="header1">
+         <h1 class="title">Lorem ipsum</h1>
+        <div id="nav">
+        <h1>Navigation</h1>
+        </div>
+    </div>
+    
+    <div id="section">
+        <h1 class="title">Lorem ipsum</h1>
+        <p>lorem ipsum dddd</p>
+    </div>
+    
+    
+    
+    <img src="images/1.png" height="100">
+    <img src="images/3.jpg" height="100">
+    <img src="5.png" height="100">
+    
+    
+    <h1>from tag -> input</h1>
+    <form>
+        <ul>
+            <li>
+                <input type="text">
+            </li>
+            <li>
+                <input type="button" value="Button">
+            </li>
+            <li>
+                <input type="button" value="Button">
+            </li>
+            <li>
+                <input type="button" value="Button">+
+            </li>
+        </ul>
+    </form>
+    
+    
+    
+    <div id="header"
+         class="color_w font_size_32 font_weight_bold font_italic">header</div>
+    <div id="aside"
+         class="color_white">aside</div>
+    <div id="content"
+         class="color_white">content</div>
+    
+    <h1 class="color_white">연말정산도 카톡이 안내한다…카카오, 공공 IT 인프라 사업 진출</h1>
+    <p>
+    카카오의 ‘인공지능(AI) 챗봇’이 정부의 ‘디지털서비스 전문 계약제도’ 심사위원회를 통과했다. 지난 9월 협업툴 카카오워크를 내놓는 등 자회사 카카오엔터프라이즈를 통해 기업 간 거래(B2B) 사업에 본격적으로 뛰어든 카카오가 공공 정보기술(IT) 인프라 시장에도 진출하는 것이다.
+    </p>-->
+</body>
+</html>
