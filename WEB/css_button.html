@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css를 이용한 버튼</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        
+        #btn {
+            width: 200px;
+            height: 100px;
+            
+            margin:100px;
+            
+            background-color: darkseagreen;
+            
+            border: 10px solid #eeee;
+            border-radius: 30px;
+            
+            text-align: center;
+            line-height: 100px
+        }
+        
+        #btn>a{
+            display: block;
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ffffff;
+            font-style:italic;
+            border-radius: 20px;
+            
+        }
+        
+        #btn>a:hover{
+            background-color: cadetblue;
+            color:darkolivegreen;
+            background-image:url(images/2.png);
+            background-size: contain;
+            
+        }
+    
+    </style>
+    
+    
+</head>
+
+<body>
+    <h1 class="title">버튼만들기</h1>
+    
+    <div id="btn">
+        <a href="#">Click</a>
+    </div>
+    
+</body>
+</html>
