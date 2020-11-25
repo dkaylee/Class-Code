@@ -1,0 +1,91 @@
+
+*{
+    margin: 0;
+    padding:0;
+}
+
+header{
+    height: 40px;
+    width:1028px;
+    padding: 15px;
+    background-color: white;
+    border: 0.3px solid #ddd;
+}
+
+header>form>input[type=text]{
+    width: 170px;
+    height: 25px;
+    border-radius: 5px;
+    padding:0 10px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    text-align: center;
+    
+}
+
+body{
+    background-color: #eee;
+}
+
+#profile_wrap{
+    overflow: hidden;
+    padding: 30px 150px;
+    width: 1028px;
+    height: 510px;
+    border-bottom: 2px solid #ccc;
+    position: absolute;
+}
+
+
+#profilepic{
+    background-color: aquamarine;
+    
+    width:140px;
+    height:140px;
+            
+    padding:10px;
+    margin:10px;
+    position:absolute;
+
+    border-radius: 140px;
+    background-size: 100%;
+    background-image: url(images/btslogo.png);
+    
+}
+
+#profile {
+    width:600px;
+    float:right;
+}
+
+
+div.circle{
+            background-color: aquamarine;
+            
+            width:80px;
+            height:80px;
+            
+            padding:10px;
+            margin:10px;
+            position: absolute; 
+    
+            border: 2px solid #ccc;
+            border-radius: 70px;
+            background-size: 100%;
+        }
+
+#circle1{
+     background-image: url(images/story1.jpg);
+     top:350px;
+}
+#circle2{
+     background-image: url(images/story2.jpg);
+     top:350px;
+     left: 290px;
+}
+#circle3{
+    background-image: url(images/story3.jpg);
+    top:350px;
+    left: 530px;
+}
+

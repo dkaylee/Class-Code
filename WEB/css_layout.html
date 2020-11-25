@@ -1,175 +1,102 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700;900&family=Noto+Sans+KR:wght@400;500;900&display=swap" rel="stylesheet">
+    
     <title>HTML5</title>
-    
-    
-        <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-            hr{
-                border: 1px solid #eee;
-                margin:5px;
-            }
-        
-            #main_wrap{
-                position:relative;
-                width:1280px;
-                margin: 30px;
-                border: 7px solid #eee;
-            }
-            
-            #wrap{
-                width: 1028px;
-                margin:30px;
-            }
-        
-        div{
-            /*border:1px solid orange;*/
-            text-align: left;
-            line-height: 20px;
-            
-        }
-        #header {
-            width: 1000px;
-            height: 100px;
-            font-family: 'Big Shoulders Stencil Display', cursive;
-            font-size: 40px;
-            line-height: 80px
-        }
-        #navi, navi>li {
-            width: 1000px;
-            height: 40px;
-            list-style: none;
-            margin: 10px 10px;
-            overflow: hidden;
-        }
-        #navi>li {
-            float: left;
-            padding: 0 20px; 
-        }
-        #input{
-            width:150px;
-            height: 20px;
-            border-radius: 10px;
-            border-color: #eee;
-            }
-        #btn{    
-            background: #eee;
-            border-radius: 5px;
-                
-            }
-            
-        #content {
-            width: 700px;
-            
-            float: left;
-        }
-            
-        #aside {
-            width: 300px;
-            float: left;
-        }
-        
-        
-        #aside, aside>li{
-                list-style: none;
-                margin: 10px 10px;
-                overflow: hidden;
-                color: gray;
-            }
-        #footer{
-            clear:both;
-            width:1000px;
-            bottom: auto;
-        }
-        
-        #content>img{
-                width:430px;
-                height: 280px;
-            }
-    
-    </style>
-    
+
+    <!--기본설정-->
+    <!--    외부에서 default.css를 로드-->
+    <link rel="stylesheet" href="default.css">
+
+
 </head>
 
 <body>
-    
-    <div id=main_wrap> 
-    <div id=wrap>     
-    <div id="header">
-        HTML5 Example Preview 
-    </div>
 
-    <div id="navi">
-        <hr>
-        <li>HTML</li>
-        <li>CSS3</li>
-        <li>JavaScripts</li>
-        <li><input type="text" id="input"></li><button id=btn>검색</button>
-        <hr>
+    <div id=main_wrap>
+        <div id="header">
+            <h1>HTML5 Example Preview</h1>
+            <h4>자바 웹 개발자 과정</h4>
+        </div>
+
+        <div id="navi">
+
+            <ul>
+                <li>HTML</li>
+                <li>CSS3</li>
+                <li>JavaScripts</li>
+                <li>JQuery</li>
+            </ul>
+
+            <form>
+                <input type="text"><input type="button" value="검색">
+            </form>
+        </div>
+
+        <div id="contents_wrap">
+            <div id="content">
+                <section>
+                    <article>
+                        <h2>세상에서 가장 사랑받는 쥐</h2>
+                        <p>2013년 02월 14일</p>
+                        <img src="images/1.png">
+                        <p>
+                            (시카고=연합뉴스) 김현 통신원 = '세상에서 가장 사랑받는 쥐', 미키 마우스가 미국 시간으로 18일, 92번째 생일을 맞았다.미키 마우스는 '디즈니 왕국'을 건설한 시카고 출신의 애니메이션 작가 겸 기업가, 월트 디즈니(1901~1966)에 의해 탄생했으며 1928년 11월 18일 디즈니와 어브 아이웍스(1901~1971)가 공동 제작한 흑백 단편 애니메이션 '증기선 윌리'(Steamboat Willie)를 통해 공식적으로 세상에 첫 선을 보였다.시카고 abc방송이 미키 마우스의 92번째 생일을 맞아 소개한 10가지 사실에 따르면 '증기선 윌리'는 '세계 최초의 유성 애니메이션'이었으며 의성어 수준이기는 하나, 디즈니가 직접 본인 목소리로 미키 마우스에 소리를 입혔다.
+                        </p>
+                        <hr>
+                    </article>
+
+
+                <hr>
+                
+                    <article>
+                        <h2>세상에서 가장 사랑받는 쥐</h2>
+                        <p>2013년 02월 14일</p>
+
+                        <img src="images/1.png">
+
+                        <p>
+                            (시카고=연합뉴스) 김현 통신원 = '세상에서 가장 사랑받는 쥐', 미키 마우스가 미국 시간으로 18일, 92번째 생일을 맞았다.미키 마우스는 '디즈니 왕국'을 건설한 시카고 출신의 애니메이션 작가 겸 기업가, 월트 디즈니(1901~1966)에 의해 탄생했으며 1928년 11월 18일 디즈니와 어브 아이웍스(1901~1971)가 공동 제작한 흑백 단편 애니메이션 '증기선 윌리'(Steamboat Willie)를 통해 공식적으로 세상에 첫 선을 보였다.시카고 abc방송이 미키 마우스의 92번째 생일을 맞아 소개한 10가지 사실에 따르면 '증기선 윌리'는 '세계 최초의 유성 애니메이션'이었으며 의성어 수준이기는 하나, 디즈니가 직접 본인 목소리로 미키 마우스에 소리를 입혔다.
+                        </p>
+                        <hr>
+                    </article>
+                </section>
+            </div>
+
+                <aside>
+                    <h4>카테고리</h4>
+                    <ul>
+                        <li>데이터</li>
+                        <li>데이터</li>
+                        <li>데이터</li>
+                        <li>데이터</li>
+                        <li>데이터</li>
+                    </ul>
+
+
+                    <h4>최근글</h4>
+                    <ul>
+                        <li>데이터</li>
+                        <li>데이터</li>
+                        <li>데이터</li>
+                        <li>데이터</li>
+                        <li>데이터</li>
+                    </ul>
+            </aside>
+
+
+            </div>
+
+
+        <footer>Copyright © DK. All rights reserved.</footer>
     </div>
-    
-    <div id="content">CONTENT
-        
-        <h3>HTML 개요와 활동</h3>
-        <h5>2013년 02월 14일</h5>
-        
-        <img src="images/1.png">
-        
-        <p>
-            (시카고=연합뉴스) 김현 통신원 = '세상에서 가장 사랑받는 쥐', 미키 마우스가 미국 시간으로 18일, 92번째 생일을 맞았다.미키 마우스는 '디즈니 왕국'을 건설한 시카고 출신의 애니메이션 작가 겸 기업가, 월트 디즈니(1901~1966)에 의해 탄생했으며 1928년 11월 18일 디즈니와 어브 아이웍스(1901~1971)가 공동 제작한 흑백 단편 애니메이션 '증기선 윌리'(Steamboat Willie)를 통해 공식적으로 세상에 첫 선을 보였다.시카고 abc방송이 미키 마우스의 92번째 생일을 맞아 소개한 10가지 사실에 따르면 '증기선 윌리'는 '세계 최초의 유성 애니메이션'이었으며 의성어 수준이기는 하나, 디즈니가 직접 본인 목소리로 미키 마우스에 소리를 입혔다.
-        </p>
-        
-        <br>
-        <hr>
-        <br>
-        
-        <h3>HTML 개요와 활동</h3>
-        <h5>2013년 02월 14일</h5>
-        
-        <img src="images/1.png">
-        
-        <p>
-            (시카고=연합뉴스) 김현 통신원 = '세상에서 가장 사랑받는 쥐', 미키 마우스가 미국 시간으로 18일, 92번째 생일을 맞았다.미키 마우스는 '디즈니 왕국'을 건설한 시카고 출신의 애니메이션 작가 겸 기업가, 월트 디즈니(1901~1966)에 의해 탄생했으며 1928년 11월 18일 디즈니와 어브 아이웍스(1901~1971)가 공동 제작한 흑백 단편 애니메이션 '증기선 윌리'(Steamboat Willie)를 통해 공식적으로 세상에 첫 선을 보였다.시카고 abc방송이 미키 마우스의 92번째 생일을 맞아 소개한 10가지 사실에 따르면 '증기선 윌리'는 '세계 최초의 유성 애니메이션'이었으며 의성어 수준이기는 하나, 디즈니가 직접 본인 목소리로 미키 마우스에 소리를 입혔다.
-        </p>
-        
-        
-   </div>
-        
-        
-        
-        
-    <div id="aside">
-        <ul><h4>카테고리</h4>
-            <li>데이터</li>
-            <li>데이터</li>
-            <li>데이터</li>
-            <li>데이터</li>
-            <li>데이터</li>
-        </ul>
-        
-        <ul><h4>최근글</h4>
-            <li>데이터</li>
-            <li>데이터</li>
-            <li>데이터</li>
-            <li>데이터</li>
-            <li>데이터</li>
-        </ul>
-        </div>
-        
-        
-    
-    <div id="footer">Created By DK</div>
-        </div>
-        </div>
 
 </body>
+
 </html>
