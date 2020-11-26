@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        ul.no_style {
+            list-style: none;
+        }
+    </style>
+
+    <script>
+        /*alert(1);
+        alert(11);*/
+
+        /*문자열의 표현은 작은 따옴표*/
+        //alert('"안녕\n하세요"');
+
+        /*숫자의 표현은 정수와 실수를 구분하지 않는다.
+        기본적인 사칙연산이 가능:+ _ * / %*/
+        //alert(1+2);
+        console.log('1+2=', 1 + 2);
+
+        console.log('"김" == "한"=>', '김' == '한');
+        console.log('"김" == "한"=>', '김' > '한');
+        console.log('"김" == "한"=>', '김' < '한');
+
+        console.log('true > false =>', true > false);
+
+        var num = 100;
+        console.log('변수 numb이 가지는 값 =>', num + 200);
+
+        var number = 1000; // 숫자
+        var str = 'String'; // 문자열
+        var bool = false; // 논리값
+        var func = function() {}; // 함수
+        var obj = {}; // 객체
+        var arr = []; // 객체(배열)
+
+        // 변수의 자료형 타입의 확인 => typeof(변수이름)
+        console.log('변수 number의 타입 ->', typeof(number));
+        console.log('변수 str의 타입 ->', typeof(str));
+        console.log('변수 func의 타입 ->', typeof(func));
+        console.log('변수 obj의 타입 ->', typeof(obj));
+
+        /*if(typeof(number)=='number'){
+            alert('변수 number는 number타입입니다.'+number*3);
+        }*/
+
+        // 같은 이름의 변수를 재선언해도 가능
+        var food = '김치찌개';
+        var food = '감자탕';
+        var food = 10;
+
+        console.log(food);
+
+
+        // 사용자의 의사표현을 묻는 함수 : yes or no -> true / false
+        var check = confirm('삭제하시겠습니까?');
+        console.log('check=',check);
+
+        
+        // 사용자의 데이터 입력을 받는 함수
+        var userData = prompt('숫자를 입력해주세요.', 100);
+        
+        
+        // Number 숫자타입으로 바꿔줌
+        var age = Number(userData);
+
+        console.log('userData=>', userData + typeof(userData));
+        console.log('age=>', age + typeof(age));
+
+        console.log('userData =>', userData);
+
+        if (userData > 19) {
+            alert('안녕하세요.');
+        } else {
+            alert('성인만 입장이 가능합니다.');
+        }
+
+        var str = String(123);
+        console.log('typeof(str)=>', typeof(str));
+
+        // 논리값으로 변환하는 함수 : Boolean()
+        console.log(Boolean(0));
+        console.log(Boolean(''));
+        console.log(Boolean(NaN));
+        console.log(Boolean(null));
+        console.log(Boolean(undefined));
+        
+        console.log(0==false);
+        console.log(''==false);
+        console.log(NaN==false);
+        console.log(null==false);
+        console.log(undefined==false);
+        
+        console.log(!0);
+        console.log(!''); // 논리값으로 자동 형 변환됨
+        console.log(!NaN);
+        console.log(!null);
+        console.log(!undefined);
+        
+        console.log(!!0);
+        console.log(!!'');
+        console.log(!!NaN);
+        console.log(!!null);
+        console.log(!!undefined);
+        
+        
+        // === 양변의 자료형과 값이 일치, !== 양변의 자료형과 값이 불일치
+        console.log('0==false',0===false);
+        console.log('\'\'==false=>', ''===false);
+        console.log('\'\'==false=>',''===0);
+        console.log(null==false);
+        console.log(undefined==false);
+
+        /*|| 논리값이 false일 때만 실행*/
+        (food > 0) || console.log('음수입니다.');
+        (food < 0) || console.log('양수입니다.');
+
+        /*&& 논리값이 true 일 때만 실행*/
+        (food < 0) && console.log('음수입니다.');
+        (food > 0) && console.log('양수입니다.');
+
+        
+        /*4. 자바스크립트의 배열
+        대괄호( [] )로 생성할 수 있다. 타입을 구분하지 않는다.
+        
+        배열(반복문) 순차적인 특징 -> 반복문을 통해서 일괄처리가능, 배열은 여러변수를 묶어서 사용 자바스크립트의 변수*/
+        var arr = [];
+        var arr = [123, 'hello', {}, function() {}, true, []];
+
+        console.log('typeof(arr)', typeof(arr));
+        console.log('arr=', arr);
+
+        
+        /*for 반복문을 이용해서 일괄 처리*/
+        for (var i = 0; i < arr.length; i++) {
+            console.log(String(i), arr[i]);
+        }
+
+        /*for in 반복문을 이용*/
+        for (var i in arr {
+                console.log(i, arr[i])
+            }
+    </script>
+
+</head>
+
+<body>
+
+    <script>
+        var name1 = '카카오';
+        var name2 = '네이버';
+
+        //      alert(2);
+        var htmlStr = '';
+        htmlStr += '<ul class="no_style">\n';
+        htmlStr += '    <li>' + name1 + '</li>\n'
+        htmlStr += '    <li>' + name2 + '</li>\n'
+        htmlStr += '</ul>';
+
+        console.log(htmlStr);
+
+        document.body.innerHTML = htmlStr;
+    </script>
+
+</body>
+
+</html>
+
+<script>
+    //    alert(3);
+</script>

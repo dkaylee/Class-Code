@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if else</title>
+    <script>
+    var userData = prompt('숫자를 입력해주세요');
+    
+    if(userData>0){ // number가 string 타입이지만 비교 연산에서는 숫자 연산이 우선한다. 숫자 타입으로 변경되어 연산한다.
+        alert('양수입니다.');
+    }else if(userData<0){
+        alert('음수입니다.');
+    }else{
+        alert('0입니다.');
+    }
+
+    
+    var userData = prompt('숫자를 입력해주세요');
+    
+    var num = Number(userData);
+    
+    console.log(!!num);
+    
+    if(!num){
+        alert('숫자만 확인이 가능합니다.');
+    }
+    else if(userData%2==0){
+        alert('짝수입니다.')
+    }else{
+        alert('홀수입니다.')
+    }
+    
+    </script>
+    
+</head>
+
+<body>
+    
+</body>
+</html>
