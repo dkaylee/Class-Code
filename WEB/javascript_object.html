@@ -151,7 +151,7 @@
         }
         
         
-        var html ='<table border=1>';
+     /*   var html ='<table border=1>';
         
         html += '   <tr>';
         html += '       <th>이름</th>';
@@ -165,14 +165,14 @@
         for(var i in students){
             
             
-           /* html += '<tr>';
+            html += '<tr>';
                 html += '<  td>'+students[i].name+'</td>';
                 html += '<  td>'+students[i].kor+'</td>';
                 html += '<  td>'+students[i].eng+'</td>';
                 html += '<  td>'+students[i].math+'</td>';
                 html += '<  td>'+students[i].sum()+'</td>';
                 html += '<  td>'+Math.floor(students[i].avg())+'</td>';
-            html += '</tr>';*/    
+            html += '</tr>';    
         };
         
         html += '</table>';
@@ -184,7 +184,7 @@
           document.body.innerHTML=html;  
         };
         
-        
+        */
         
         /*
         생성자 함수
@@ -198,7 +198,6 @@
             this.kor=kor;
             this.eng=eng;
             this.math=math;
-        
         
         /*// 총합을 구하는 메소드
         this.sum = function(){
@@ -223,6 +222,7 @@
                 
                 return html;
             }*/
+            
         }
         
         
@@ -259,13 +259,13 @@
         
         // 
         students.push(new Student('A01',96,98,92,98));
-        students.push(new Student('A01',96,98,92,98));
-        students.push(new Student('A01',96,98,92,98));
-        students.push(new Student('A01',96,98,92,98));
-        students.push(new Student('A01',96,98,92,98));
-        students.push(new Student('A01',96,98,92,98));
-        students.push(new Student('A01',96,98,92,98));
-        students.push(new Student('A01',96,98,92,98));
+        students.push(new Student('A02',96,98,92,98));
+        students.push(new Student('A03',96,98,92,98));
+        students.push(new Student('A04',96,98,92,98));
+        students.push(new Student('A05',96,98,92,98));
+        students.push(new Student('A06',96,98,92,98));
+        students.push(new Student('A07',96,98,92,98));
+        students.push(new Student('A08',96,98,92,98));
         
         
         students.sort(function(right,left){
@@ -302,6 +302,9 @@
         
         html += '</table>';
         
+        
+        
+        ///////////////////////////////////////////////////////////////
         
         // 생성자 함수
         function Rectangle(w,h){
