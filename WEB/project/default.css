@@ -1,0 +1,158 @@
+url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Montserrat:wght@200;600&display=swap" rel="stylesheet");
+
+*{
+    padding:0;
+    margin:0;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+}
+
+
+/*프로그램 타이틀 선택*/
+h1.header {
+    margin:20px;
+    color:blueviolet;
+}
+
+hr {
+    border:0;
+    border-top: 2px solid #ccc;
+}
+
+h2.title {
+    font-weight: 500;
+    margin: 20px 40px;
+    color:dimgrey;
+}
+
+#regform {
+    margin: 25px 0px;
+}
+
+#regform>table {
+    width: 900px;
+    color: dimgrey;
+}
+
+#regform>table td {
+    width:120px;
+    padding: 10px;
+    vertical-align: top;
+}
+
+#regform>table input {
+    padding: 5px;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+    color: blueviolet;
+}
+
+#regform>table label {
+    display: block;
+    padding: 5px;
+    
+}
+
+#regform>table input[type=submit]{
+    width: 100px;
+    height: 55px;
+    background-color:blueviolet;
+    color: white;
+    border: 2px solid #ccc;
+    
+}
+
+
+div.msg{
+    color: coral;
+    font-size: 0.8em;
+    display: none;
+}
+
+table{
+    width:900px;
+    border-collapse: collapse;
+    margin: 10px 40px;
+    
+}
+
+table>th{
+    background-color:coral;
+}
+
+table.table td, table.table th{
+    padding: 10px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    color: dimgray;   
+}
+
+div.edit_div{
+    width: 400px;
+    padding: 15px;
+    
+    border: 1px solid #cccc;
+    border-radius: 10px;
+    
+    box-shadow: 2px 2px 10px #ccc;
+    
+    position : absolute;
+    
+    top: 50px;
+    left:10px;
+    
+    background-color: whitesmoke;
+    display:none;
+}
+
+div.edit_div>div.edit_for_header{
+    overflow: : hidden;
+}
+
+div.edit_div>div.edit_for_header>h2{
+    float: left;
+}
+div.edit_div>div.edit_for_header>a{
+    float: right;
+}
+
+#editform {
+    margin: 5px;
+}
+
+#editform>table {
+    width:100%;
+}
+
+#editform>table td{
+    padding: 5px;
+    text-align: center;
+}
+
+#editform input[type=submit]{
+    background-color: blueviolet;
+    padding:10px;
+    width:25%;
+    font-size:1em;
+    color:white;
+    border: 2px solid #cccc;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
