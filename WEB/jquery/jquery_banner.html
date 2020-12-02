@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Banner Image</title>
+     <!--jQuery 라이브러리 로드-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    
+    <script>
+        $(document).ready(function(){
+            
+            setInterval(function(){
+           $('img').first().appendTo('div');
+            },1000);
+            
+        });
+    </script>
+    
+    
+    
+    <style>
+        
+        div{
+            width: 150px;
+            height: 150px;
+            
+            border: 5px solid #eee;
+            
+            overflow: hidden;
+        }
+        
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    
+    </style>
+ 
+    
+</head>
+
+<body>
+    
+    <div>
+    <img src="../images/1.png">
+    <img src="../images/2.png">
+    <img src="../images/3.jpg">
+    <img src="../images/story3.jpg">
+    </div>
+    
+    
+</body>
+</html>
