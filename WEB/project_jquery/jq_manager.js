@@ -68,54 +68,27 @@ $(document).ready(function(){
     //--------------------------------------------------------
     
     
-    
     // 배열생성
     
-    var members = [];
-    
+    // 회원정보 Member 객체들을 저장하는 배열
+    var members = []; // object -> 문자열  JSON
+
+    // 생성자 함수 Member
+
     function Member(id, pw, name) {
     this.userid = id;
     this.userpw = pw;
     this.username = name;
     }
+
     
 
-    console.log(this.userid + ' : ' + this.userpw + ' : ' + this.username);
-
-    var xml = '';
-    xmlStr += '<tr>';
-    xmlStr += ' <td>' + index + '</td>';
-    xmlStr += ' <td>' + this.userid + '</td>';
-    xmlStr += ' <td>' + this.userpw + '</td>';
-    xmlStr += ' <td>' + this.username + '</td>';
-    xmlStr += ' <td><a href="javascript:editMember(' + index + ')">수정</a> <a href="javascript:delmember(' + index + ')">삭제</a></td>';
-    xmlStr += '</tr>';
-
-   
-    var xmlDoc = $.parseXML(xmlStr);
     
-   $(xmlDoc).find('members').each(function(index){
-       var userid = $(this).find('userid').text();
-       var userpw = $(this).find('userpw').text();
-       var username = $(this).find('username').text();
-       
-       var html='';
-   })
     
-   /* $.each(members, function(index, item ){
-       console.log(index,item);
+    /*// add member
+    $('#regmember').on(click,function(){
         
-    var output = "";
-        
-    output += '<h4>' + item.userid + '</h4>';
-    output += '<h4>' + item.password + '</h4>';
-    output += '<h4>' + item.name+ '</h4>';
-        
-    documen.body.innerHTML += output;
-        
-        
-    });
-    */
+    });*/
     
     
     
