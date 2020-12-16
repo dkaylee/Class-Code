@@ -24,3 +24,6 @@
 
 
 %>
+
+
+<jsp:forward page="view.jsp"/>
