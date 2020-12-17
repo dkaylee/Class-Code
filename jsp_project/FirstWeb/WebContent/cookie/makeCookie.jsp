@@ -1,3 +1,4 @@
+<%@page import="util.CookieBox"%>
 <%@page import="java.net.URLDecoder"%>
 <%@page import="java.net.URLEncoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -11,7 +12,12 @@
 	response.addCookie(c1);
 	
 	Cookie c2 = new Cookie("userName", URLEncoder.encode("전정국", "utf-8"));
+	c2.setMaxAge(60*20);
 	response.addCookie(c2);
+	
+	response.addCookie(CookieBox.createCookie("nickName", "Cooky"));
+	response.addCookie(CookieBox.createCookie("age", "24", "/", -1));
+	
 %>    
 <!DOCTYPE html>
 <html>
@@ -28,12 +34,6 @@
 	
 	
 	<a href="viewCookie.jsp">쿠키 정보 보기</a>
-	
-	
-	
-	
-	
-	
-	
+
 </body>
 </html>

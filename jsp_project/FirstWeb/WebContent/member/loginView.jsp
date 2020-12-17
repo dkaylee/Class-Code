@@ -4,7 +4,7 @@
 
 <%
 
-	LoginData data = (LoginData) request.getAttribute("data");
+	LoginData loginData = (LoginData)request.getAttribute("login");
 
 %>
     
@@ -17,16 +17,16 @@
 </head> 
 <body>
 
-	<h1>회원이 작성한 데이터 출</h1>
+	<h1>회원이 작성한 데이터 출력</h1>
 	
 	<table>
 		<tr>
 		<td>ID</td>
-		<td><%= data.getId() %></td>
+		<td><%= loginData.getId() %></td>
 		</tr>
 		<tr>
 		<td>PW</td>
-		<td><%= data.getPw() %></td>
+		<td><%= loginData.getPw() %></td>
 		</tr>
 	</table>
 

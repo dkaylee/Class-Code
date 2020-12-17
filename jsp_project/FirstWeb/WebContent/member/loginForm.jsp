@@ -1,3 +1,16 @@
+
+<%@ page import="util.CookieBox" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+	CookieBox cookieBox = new CookieBox(request);
+
+	String saveId = cookieBox.exists("uid") ? cookieBox.getValue("uid") : "";
+	String checked = cookieBox.exists("uid") ? " checked " : "";
+	
+%>
+    
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -10,12 +23,12 @@
 <body>
     <h1>회원 로그인 </h1>
     <hr>
-    <form action="loginResult.jsp" method="get">
+    <form action="loginB.jsp" method="get">
         <table>
             <tr>
                 <th><label for="userid">아이디</label></th>
                 <td>
-                    <input type="text" id="userId" name="userId">
+                    <input type="text" id="userId" name="userId" value=""<%= saveId %>> <!-- cookieBox.getValue("uid") -->
                 </td>
             </tr>
             
@@ -26,8 +39,10 @@
                 </td>
             </tr>
             <tr>
+            	<th></th>
+            	
                 <td >
-                    
+                	<input type="checkbox" name="chk" value="on" <%= checked %> > 아이디 저장    
                 </td>
                 <td>
                 <input type="submit" value="로그인">
