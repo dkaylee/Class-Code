@@ -5,7 +5,7 @@
  
  <%
  
- 	RegData data = (RegData) request.getAttribute("data");
+ 	RegData data = (RegData) request.getAttribute("memberInfo");
  
  %>
     
@@ -18,27 +18,14 @@
 </head>
 <body>
 
-	<h1>회원이 작성한 데이터 출력</h1>
+	<h1>회원가입이 완료되었습니다.</h1>
 	
-	<table>
-		<tr>
-		<td>아이디(이메일)</td>
-		<td><%=data.getId() %></td>
-		</tr>
-		<tr>
-		<td>비밀번호</td>
-		<td><%=data.getPw() %></td>
-		</tr>
-		<tr>
-		<td>이름</td>
-		<td><%=data.getName() %></td>
-		</tr>
-		<tr>
-		<td>사진</td>
-		<td><%=data.getPhoto() %></td>
-		</tr>
-	</table>
-	
-	
+	<h3>
+		ID : <%=data.getId() %>, <br>
+		PW : <%=data.getPw() %>, <br>
+		Name : <%=data.getName() %>, <br>
+		Photo : <%=data.getPhoto() %>
+	</h3>
+
 </body>
 </html>
