@@ -1,5 +1,5 @@
 <%@page import="java.sql.DriverManager"%>
-<%@page import="com.mysql.jdbc.Connection"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -13,9 +13,9 @@
 	
 	
 	// 2. DB 연결 : Connection 객체를 얻어온다.
- 	String jdbcUrl = "jdbc:mysql://localhost:3306/project?serverTimeZone";
-	String user = "bit";
-	String password = "bit";
+ 	String jdbcUrl = "jdbc:mysql://localhost:3306/open?serverTimeZone=UTC";
+	String user = "dk";
+	String password = "dk";
 	
 	conn = DriverManager.getConnection(jdbcUrl, user, password);
 	
