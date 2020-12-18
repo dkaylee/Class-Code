@@ -24,9 +24,9 @@
  	// beans를 request 내장 객체의 속성에 저장 -> view 페이지에 데이터 공유(전달)
     request.setAttribute("memberInfo", regData);
  	
-    // view 페이지로 forwarding
+    
  %>
-
+	// view 페이지로 forwarding
 	<jsp:forward page="regView.jsp"/>
 	
 	

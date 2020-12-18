@@ -1,13 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원 가입 폼</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
-
 <body>
-    <h1>회원 가입</h1>
+
+	<h1>회원 가입</h1>
     <hr>
     <form action="regB.jsp" method="get">
         <table>
@@ -44,5 +45,7 @@
         </table>
     </form>
     
+    
+
 </body>
 </html>
