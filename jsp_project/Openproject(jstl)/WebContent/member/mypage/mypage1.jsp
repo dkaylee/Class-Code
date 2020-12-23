@@ -24,7 +24,7 @@
 		<hr>
 		<div class="content">
 		<%-- <%= session.getAttribute("loginInfo") %> --%>
-		$
+		${loginInfo}
 		<br>
 		
 		<%
@@ -39,8 +39,8 @@
 		
 		<img alt="프로필 사진" 
 		src= "${pageContext.request.contextPath}/images/${loginInfo.memberPhoto}"
-		height="100"
-		>
+		height="100">
+		
 		<%} %>
 		
 		</div>

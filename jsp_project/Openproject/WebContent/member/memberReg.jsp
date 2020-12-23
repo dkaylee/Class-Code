@@ -24,6 +24,7 @@
 		String userPhoto = request.getParameter("userPhoto");
 	
 		Member member = new Member();
+		
 		member.setUserId(userId);
 		member.setPassword(pw);
 		member.setUserName(userName);

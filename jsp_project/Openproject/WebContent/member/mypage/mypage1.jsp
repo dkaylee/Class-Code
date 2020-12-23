@@ -24,7 +24,7 @@
 		<hr>
 		<div class="content">
 		<%-- <%= session.getAttribute("loginInfo") %> --%>
-		$
+		${loginInfo}
 		<br>
 		
 		<%

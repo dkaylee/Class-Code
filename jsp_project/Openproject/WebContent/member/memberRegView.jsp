@@ -28,7 +28,7 @@
 		<hr>
 		<div class = "content">
 		<%
-			if(result>0){
+			if(result > 0){
 				out.println("정상적으로 회원가입이 되었습니다.");
 			}else{
 				out.println("회원가입 실패! 다시 시도해주세요");

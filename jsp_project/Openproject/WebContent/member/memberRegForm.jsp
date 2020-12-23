@@ -23,10 +23,11 @@
 	
 	<%@ include file="/include/nav.jsp" %>
 	
-	<div class= "contens">
+	<div class= "contents">
 		<h2 class= "content_title">회원 가입 Form </h2>
 		<hr>
 		<div class = "content">
+		
 		<form action="memberReg.jsp" method="post">
         <table>
             <tr>
