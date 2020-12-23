@@ -28,7 +28,8 @@
             <tr>
                 <th><label for="userid">아이디</label></th>
                 <td>
-                    <input type="text" id="userId" name="userId" value=""<%= saveId %>> <!-- cookieBox.getValue("uid") -->
+                   <%--  <input type="text" id="userId" name="userId" value=""<%= saveId %>> <!-- cookieBox.getValue("uid") --> --%>
+                   <input type="text" id="userId" name="userId" value=""${cookie.uid.value}>
                 </td>
             </tr>
             

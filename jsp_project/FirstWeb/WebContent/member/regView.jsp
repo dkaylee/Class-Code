@@ -21,10 +21,10 @@
 	<h1>회원가입이 완료되었습니다.</h1>
 	
 	<h3>
-		ID : <%=data.getId() %>, <br>
-		PW : <%=data.getPw() %>, <br>
-		Name : <%=data.getName() %>, <br>
-		Photo : <%=data.getPhoto() %>
+		ID : ${memberInfo.userId} <%-- <%=data.getId() %> --%>, <br>
+		PW : ${memberInfo.pw}<%-- <%=data.getPw() %> --%>, <br>
+		Name : ${memberInfo.name}<%-- <%=data.getName() %> --%>, <br>
+		Photo : ${memberInfo.photo}<%-- <%=data.getPhoto() %> --%>
 	</h3>
 
 </body>

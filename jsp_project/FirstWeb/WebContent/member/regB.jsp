@@ -4,6 +4,8 @@
 
 
 <% 
+	//사용자가 입력한 데이터의 한글 처리
+	request.setCharacterEncoding("UTF-8");
 	
 	// 데이터를 받고 name에 맞춰야함
 	String userId = request.getParameter("userId");
