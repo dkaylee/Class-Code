@@ -42,7 +42,7 @@
 		
 		loginChk = true;
 		
-	} // login_view.jsp로 포워딩
+	} // loginView.jsp로 포워딩
 	if(loginChk){
 %>
 	<jsp:forward page="loginView.jsp"/>

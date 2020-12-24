@@ -24,7 +24,7 @@
 	
 	<%@ include file="/include/nav.jsp" %>
 	
-	<div class= "contens">
+	<div class= "contents">
 		<h2 class= "content_title">회원가입 </h2>
 		<hr>
 		<div class = "content">
