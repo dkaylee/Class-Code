@@ -4,8 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.mysql.cj.protocol.Resultset;
 
 import member.Member;
 
@@ -30,25 +31,26 @@ public class MemberDao {
 	// insert, select, update, delete
 	
 	// 데이터 입력
-	public int insertMember(Connection conn, Member member) {
+	public int insertMember(Connection conn, Member member) throws SQLException {
 		
 		int resultCnt = 0;
 		
 		PreparedStatement pstmt = null;
 		
-		String sqlInsert = "INSERT INTO member (memberid, password, membername) VALUES (?,?,?)";
+		String sqlInsert = "INSERT INTO member (memberid, password, membername, memberphoto) VALUES (?,?,?,?)";
 		
-		try {
-			pstmt = conn.prepareStatement(sqlInsert);
-			pstmt.setString(1, member.getUserId());
-			pstmt.setString(2, member.getPassword());
-			pstmt.setString(3, member.getUserName());
-			
-			resultCnt = pstmt.executeUpdate();
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			pstmt = conn.prepareStatement(sqlInsert);
+//			pstmt.setString(1, member.getUserId());
+//			pstmt.setString(2, member.getPassword());
+//			pstmt.setString(3, member.getUserName());
+//			pstmt.setString(4, member.getUserPhoto());
+//			
+//			resultCnt = pstmt.executeUpdate();
+//			
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 		
 		return resultCnt;
 	}
@@ -59,7 +61,7 @@ public class MemberDao {
 		
 		Member member = null;
 		
-		String sqlSelect = "SELECT * FROM member where memberid=? and password=?";
+		String sqlSelect = "SELECT * FROM member where memberid=? and password=? and membername=? and memberphoto=?";
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sqlSelect);
@@ -69,11 +71,7 @@ public class MemberDao {
 			ResultSet rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				member = new Member(
-						rs.getString("memberid"), 
-						rs.getString("password"), 
-						rs.getString("membername"),
-						rs.getString("memberphoto"));
+				member = makeMember(rs);
 			}
 			
 		} catch (SQLException e) {
@@ -84,6 +82,51 @@ public class MemberDao {
 		
 		return member;		
 	}
+	
+	// 전체 리스트를 반환하는 select
+	public List<Member> selectMember(Connection conn){
+		
+		List<Member> list = new ArrayList<Member>();
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "select * from member";
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			// 다음행이 있는지 확인
+			while(rs.next()) {
+					list.add(makeMember(rs));
+			}
+			rs.close();
+			pstmt.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		return list;
+	
+	}
+	
+	
+	private Member makeMember(ResultSet rs) throws SQLException {
+		
+		return new Member(
+				rs.getString("memberid"),
+				rs.getNString("password"),
+				rs.getString("membername"),
+				rs.getString("memberphoto"),
+				rs.getTimestamp("regdate")
+				);
+	}
+	
 	
 	
 }

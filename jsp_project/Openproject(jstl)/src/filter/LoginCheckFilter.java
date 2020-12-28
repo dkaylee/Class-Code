@@ -27,7 +27,7 @@ public class LoginCheckFilter implements Filter {
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpSession session = httpRequest.getSession();
 		
-		boolean loginCheck=false;
+		// boolean loginCheck = false;
 		
 		if(session != null && session.getAttribute("loginInfo")!=null) {
 			chain.doFilter(request, response);
@@ -40,14 +40,12 @@ public class LoginCheckFilter implements Filter {
 
 	@Override
 	public void destroy() {
-		// TODO Auto-generated method stub
-		Filter.super.destroy();
+		
 	}
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		// TODO Auto-generated method stub
-		Filter.super.init(filterConfig);
+
 	}
 
 }

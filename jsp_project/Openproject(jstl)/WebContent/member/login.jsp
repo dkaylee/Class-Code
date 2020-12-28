@@ -6,6 +6,8 @@
 <%@page import="member.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+
 <%
 		// 데이터 받기 : 아이디, 비밀번호
 		String userId = request.getParameter("userid");
@@ -35,12 +37,12 @@
 		if(member != null){
 			
 			// 인증이 되어 로그인 처리 : session 객체에 로그인 정보를 속성에 저장
-			//System.out.println(member);
+			// System.out.println(member);
 			LoginInfo loginInfo = member.toLoginInfo();
 			
 			session.setAttribute("loginInfo", loginInfo);
 			
-			//System.out.println(loginInfo);
+			// System.out.println(loginInfo);
 			loginChk = true;
 			
 		} 		
@@ -53,7 +55,7 @@
 		} else {
 %>
 <script>
-	alert("아이디 또는 비밀번호가 틀립니다. 다시 로그인해주세요. ");
+	alert("아이디 또는 비밀번호가 틀립니다. 다시 로그인해주세요.");
 	history.go(-1);
 </script>
 <%

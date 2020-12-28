@@ -3,7 +3,6 @@
     pageEncoding="UTF-8"%>
 <%
 	/* LoginInfo loginInfo = (LoginInfo) session.getAttribute("loginInfo"); */
-	LoginInfo loginInfo = (LoginInfo) session.getAttribute("loginInfo");
 %>
 <!DOCTYPE html>
 <html>
@@ -32,17 +31,6 @@
 	</div>
 	
 	<%@ include file="/include/footer.jsp" %>
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 
 </body>
 </html>

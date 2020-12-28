@@ -27,6 +27,11 @@
    	<filter-name>LoginCheckFilter</filter-name>
    	<url-pattern>/member/mypage/*</url-pattern>
    </filter-mapping>
+  
+   <filter-mapping>
+   	<filter-name>LoginCheckFilter</filter-name>
+   	<url-pattern>/member/manager/*</url-pattern>
+   </filter-mapping>
    
    
   <filter>
