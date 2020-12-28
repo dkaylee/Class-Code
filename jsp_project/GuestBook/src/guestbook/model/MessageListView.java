@@ -14,14 +14,21 @@ public class MessageListView {
 	private int endRow;	// Oracle 일 때만 필요
 	
 	
-	public MessageListView(int messageTotalCount, int currentPageNumber, List<Message> messageList,
-			int messageCountPerPage, int firstRow, int endRow) {
+	public MessageListView(
+			int messageTotalCount, 
+			int currentPageNumber, 
+			List<Message> messageList,
+			int messageCountPerPage, 
+			int firstRow, 
+			int endRow) {
+		
 		this.messageTotalCount = messageTotalCount;
 		this.currentPageNumber = currentPageNumber;
 		this.messageList = messageList;
 		this.messageCountPerPage = messageCountPerPage;
 		this.firstRow = firstRow;
 		this.endRow = endRow;
+		calculatePageTotalCount();
 	}
 	
 	
@@ -31,7 +38,7 @@ public class MessageListView {
 		}else {
 			pageTotalCount = messageTotalCount/messageCountPerPage;
 		}if(messageTotalCount % messageCountPerPage > 0) {
-				pageTotalCount = 0;
+				pageTotalCount++;
 		} 
 	}
 

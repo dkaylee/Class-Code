@@ -38,15 +38,19 @@ public class GetMessageListService {
 				dao = MessageDao.getInstance();
 				
 				// 게시물의 전체 개수 -> 페이지 개수
-				int totalPageCount = dao.selectAllcount(conn);
+				int totalMessageCount = dao.selectAllcount(conn);
 				
 				// 현재 페이지의 메시지 리스트 구하기
 				List<Message> messageList = null;
 				int firstRow = 0;
 				int endRow = 0;
 				
-				firstRow = (pageNumber-1)*messageCountPerPage+1;
+				firstRow = (pageNumber-1)*messageCountPerPage;
 				endRow = firstRow+messageCountPerPage-1;
+				
+				messageList = dao.selectList(conn, firstRow, messageCountPerPage);
+				
+				listView = new MessageListView(totalMessageCount, pageNumber, messageList, messageCountPerPage, firstRow, endRow);
 				
 			} catch (SQLException e) {
 				e.printStackTrace();
