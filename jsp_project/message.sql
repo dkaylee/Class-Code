@@ -10,7 +10,7 @@ select * from open.guestbook_message;
 
 delete from `open`.`guestbook_message` where message_id = 1;
 
--- delete from 'open'.'guestbook_message' where message_id=1;
+-- DELETE FROM guestbook_message WHERE message_id=?
 
 
 -- 전체 게시물의 개수 구하기
@@ -20,3 +20,11 @@ select count(*) from open.guestbook_message;
 -- 페이지 별 메시지 리스트(4번째부터 3개 출력)
 select * from open.guestbook_message order by message_id desc limit 4,3;
 -- select * from open.guestbook_message order by message_id desc limit ?,?;
+
+-- 게시물 하나를 검색하는 질의
+select*from open.guestbook_message where message_id=9;
+-- select*from guestbook_message where message_id=?
+
+
+
+
