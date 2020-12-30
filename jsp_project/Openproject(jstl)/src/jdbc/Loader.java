@@ -12,6 +12,7 @@ public class Loader extends HttpServlet {
 	public void init(ServletConfig servletConfig) throws ServletException {
 		
 		String driver = servletConfig.getInitParameter("driver");
+		System.out.println(driver);
 		
 		if(driver == null) {
 			driver = "com.mysql.cj.jdbc.Driver";

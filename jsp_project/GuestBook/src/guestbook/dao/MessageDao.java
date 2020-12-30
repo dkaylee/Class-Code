@@ -16,7 +16,6 @@ public class MessageDao {
 	// 싱글톤 패턴 : Dao 인스턴스는 여러 개 생성될 필요가 없다.
 	private MessageDao() {
 	}
-
 	private static MessageDao dao = new MessageDao();
 
 	public static MessageDao getInstance() {

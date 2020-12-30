@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionProvider {
 	
-	public static Connection getConnection() {
+	public static Connection getConnection() throws SQLException {
 		
 		Connection conn=null;
 		
@@ -15,10 +15,9 @@ public class ConnectionProvider {
 		String user = "dk";
 		String password = "dk";
 		
-		try {
+
 		conn = DriverManager.getConnection(jdbcUrl, user, password);
-		} catch (SQLException e) {
-		}
+		
 		return conn;
 	}
 }

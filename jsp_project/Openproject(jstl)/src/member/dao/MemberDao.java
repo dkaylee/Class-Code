@@ -4,11 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import member.Member;
+import member.model.Member;
 
 public class MemberDao {
 	
@@ -39,18 +39,18 @@ public class MemberDao {
 		
 		String sqlInsert = "INSERT INTO member (memberid, password, membername, memberphoto) VALUES (?,?,?,?)";
 		
-//		try {
-//			pstmt = conn.prepareStatement(sqlInsert);
-//			pstmt.setString(1, member.getUserId());
-//			pstmt.setString(2, member.getPassword());
-//			pstmt.setString(3, member.getUserName());
-//			pstmt.setString(4, member.getUserPhoto());
-//			
-//			resultCnt = pstmt.executeUpdate();
-//			
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
+		/* try { */
+			pstmt = conn.prepareStatement(sqlInsert);
+			pstmt.setString(1, member.getUserId());
+			pstmt.setString(2, member.getPassword());
+			pstmt.setString(3, member.getUserName());
+			pstmt.setString(4, member.getUserPhoto());
+			
+			resultCnt = pstmt.executeUpdate();
+			
+/*		} catch (SQLException e) {
+			e.printStackTrace();
+		}*/
 		
 		return resultCnt;
 	}
@@ -61,7 +61,7 @@ public class MemberDao {
 		
 		Member member = null;
 		
-		String sqlSelect = "SELECT * FROM member where memberid=? and password=? and membername=? and memberphoto=?";
+		String sqlSelect = "SELECT * FROM member where memberid=? and password=?";
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sqlSelect);
@@ -71,17 +71,16 @@ public class MemberDao {
 			ResultSet rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				member = makeMember(rs);
+				member=makeMember(rs);
 			}
 			
 		} catch (SQLException e) {
-			   
 			e.printStackTrace();
 		}
 		
-		
 		return member;		
 	}
+	
 	
 	// 전체 리스트를 반환하는 select
 	public List<Member> selectMember(Connection conn){
@@ -93,40 +92,91 @@ public class MemberDao {
 		
 		String sql = "select * from member";
 		try {
-			
 			pstmt = conn.prepareStatement(sql);
-			
 			rs = pstmt.executeQuery();
 			
-			// 다음행이 있는지 확인
 			while(rs.next()) {
-					list.add(makeMember(rs));
+				list.add(makeMember(rs));
 			}
+			
 			rs.close();
 			pstmt.close();
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		
-		
 		return list;
-	
+	}
+
+	public List<Member> selectMember(Connection conn, int firstRow, int count) throws SQLException {
+		
+		List<Member> memberList = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "select * from member order by memberid limit ?, ?";
+		
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, firstRow);
+			pstmt.setInt(2, count);
+			
+			rs = pstmt.executeQuery();
+			
+			memberList = new ArrayList<Member>();
+			
+			while(rs.next()) {
+				memberList.add(makeMember(rs));
+			}
+			
+		} finally {
+			rs.close();
+			pstmt.close();
+		}
+		
+		return memberList;
 	}
 	
 	
+	
+	
+	
+	
+	
 	private Member makeMember(ResultSet rs) throws SQLException {
-		
 		return new Member(
 				rs.getString("memberid"),
-				rs.getNString("password"),
+				rs.getString("password"),
 				rs.getString("membername"),
 				rs.getString("memberphoto"),
 				rs.getTimestamp("regdate")
 				);
 	}
-	
-	
+
+	public int selectMemberTotalCount(Connection conn) throws SQLException {
+		
+		int resultCnt = 0;
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		String sql = "select count(*) from member";
+		
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				resultCnt = rs.getInt(1);
+			}
+			
+		} finally {
+			rs.close();
+			stmt.close();
+		}
+		
+		return resultCnt;
+	}
 	
 }
+
