@@ -78,8 +78,6 @@ public class MemberLoginService {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 		
 		request.setAttribute("loginChk", loginChk);

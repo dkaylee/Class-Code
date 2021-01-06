@@ -3,4 +3,5 @@
 /index.do=mvc.command.IndexCommand
 /member/loginForm.do=mvc.command.LoginFormCommand
 /member/login.do=mvc.command.LoginCommand
-/member/memberRegForm.do=mvc.command.MemberRegCommand
+/member/memberRegForm.do=mvc.command.MemberCommand
+/member/list.do=mvc.command.GuestbookCommand

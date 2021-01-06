@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,7 +26,7 @@
 		<h2 class= "content_title">회원 가입 Form </h2>
 		<hr>
 		<div class = "content">
-		<form action="/member/memberReg3.do" method="post" enctype="multipart/form-data">
+		<form action="/member/memberRegForm.do" method="post" enctype="multipart/form-data">
         <table>
             <tr>
                 <th><label for="userId">아이디(email)</label></th>

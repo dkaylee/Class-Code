@@ -13,7 +13,7 @@
 		
 		<ul><!--        /op --> 
 			<li> <a href="<c:url value="/"/>">HOME</a>  </li>
-			<li> <a href="<c:url value="/member/memberRegForm.jsp"/>">회원가입</a>  </li>
+			<li> <a href="<c:url value="/member/memberRegForm.do"/>">회원가입</a>  </li>
 			<li>
 				<%
 					if(session.getAttribute("loginInfo")==null){
@@ -22,15 +22,15 @@
 			 <%
 					} else {
 			 %>
-			 <a href="<c:url value="/member/logout.jsp"/>">LOGOUT</a>
+			 <a href="<c:url value="/member/logout.do"/>">LOGOUT</a>
 			 <%
 					}
 			 %>			 
 			 </li>
-			<li> <a href="<c:url value="/member/mypage/mypage1.jsp"/>">mypage1</a>  </li>
-			<li> <a href="<c:url value="/member/mypage/mypage2.jsp"/>">mypage2</a>  </li>
-			<li> <a href="<c:url value="/member/manager/memberList_view.jsp"/>">회원정보</a>  </li>
-			<li> <a href="<c:url value="#"/>">방명록</a>  </li>
+			<li> <a href="<c:url value="/member/mypage1.do"/>">mypage1</a>  </li>
+			<li> <a href="<c:url value="/member/mypage2.do"/>">mypage2</a>  </li>
+			<li> <a href="<c:url value="/member/memberList_view.do"/>">회원정보</a>  </li>
+			<li> <a href="<c:url value="/member/list.do"/>">방명록</a>  </li>
 			
 		</ul>
 		

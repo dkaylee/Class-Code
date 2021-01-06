@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+  <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:url value="/css/default.css" var="url_defaultCss" scope="application" />
@@ -28,7 +28,7 @@
 	<div class="contents">
 		<h2 class="content_title">index</h2>
 		<hr>
-		<div class="content">인텍스 페이지 입니다.</div>
+		<div class="content">인덱스 페이지 입니다.</div>
 	</div>
 
 	<%@ include file="/WEB-INF/view/include/footer.jsp"%>
