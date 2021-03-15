@@ -1,0 +1,21 @@
+Script started on Wed Feb 10 16:12:41 2021
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ i[Kpip install BeautifulSoup4
+Requirement already satisfied: BeautifulSoup4 in /Users/dkaylee/opt/anaconda3/lib/python3.8/site-packages (4.9.3)
+Requirement already satisfied: soupsieve>1.2; python_version >= "3.0" in /Users/dkaylee/opt/anaconda3/lib/python3.8/site-packages (from BeautifulSoup4) (2.0.1)
+bash-3.2$ i[Kpip install bs4
+Collecting bs4
+  Using cached bs4-0.0.1.tar.gz (1.1 kB)
+Requirement already satisfied: beautifulsoup4 in /Users/dkaylee/opt/anaconda3/lib/python3.8/site-packages (from bs4) (4.9.3)
+Requirement already satisfied: soupsieve>1.2; python_version >= "3.0" in /Users/dkaylee/opt/anaconda3/lib/python3.8/site-packages (from beautifulsoup4->bs4) (2.0.1)
+Building wheels for collected packages: bs4
+  Building wheel for bs4 (setup.py) ... [?25l- \ done
+[?25h  Created wheel for bs4: filename=bs4-0.0.1-py3-none-any.whl size=1273 sha256=c606d4c3338b46c5a6923a8fa0f4743ffa635103736b232225f7a957ba16e2ea
+  Stored in directory: /Users/dkaylee/Library/Caches/pip/wheels/75/78/21/68b124549c9bdc94f822c02fb9aa3578a669843f9767776bca
+Successfully built bs4
+Installing collected packages: bs4
+Successfully installed bs4-0.0.1
+bash-3.2$ 
